@@ -19,7 +19,11 @@ def ConstructiveAlgorithm(solutions, alpha = 0.2):
 
     lowerRange = h_min
     upperRange = h_max + alpha * (h_min - h_max)
-    candidatesList = [element for element in solutions if element >= lowerRange and element <= upperRange]
+    candidatesList = []
+    for element in solutions:
+        value = element.objective_value()
+        if value >= lowerRange and value <= upperRange:
+            candidatesList.append(element)
 
     return random.choice(candidatesList)
     
