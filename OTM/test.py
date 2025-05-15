@@ -1,28 +1,23 @@
 import time
-import unittest
 from grasp import grasp
 from classes_solucao import KPFSolution
 from utils import ConstructiveAlgorithm, BestImprovement
-
-class PenaltySet:
-    def __init__(self, allowance, penalty):
-        self.allowance = allowance
-        self.penalty = penalty
-
-class MockProblem:
-    def __init__(self):
-        self.items = [
-            {"profit": 10, "weight": 5},
-            {"profit": 20, "weight": 10},
-            {"profit": 15, "weight": 7}
-        ]
-        self.penalty_sets = [PenaltySet(allowance=1, penalty=5)]
-        self.item_to_sets = [[0], [0], [0]]
-        self.capacity = 20
-        self.max_violations = 1
+from classes_base import KPFSProblem, Item, PenaltySet  # Importando as classes corretamente
 
 # Criando uma instância do problema
-problem = MockProblem()
+items = [
+    Item(0, profit=10, weight=5),
+    Item(1, profit=20, weight=10),
+    Item(2, profit=15, weight=7)
+]
+
+penalty_sets = [
+    PenaltySet(indices=[0, 1], allowance=1, penalty=5),
+    PenaltySet(indices=[1, 2], allowance=2, penalty=3)
+]
+
+problem = KPFSProblem(items, penalty_sets, capacity=20, max_violations=1)
+
 solutions = [KPFSolution(problem) for _ in range(5)]
 neighbourhood = [sol.clone() for sol in solutions]
 
@@ -42,4 +37,3 @@ print(f"Tempo gasto: {elapsed_time:.2f}s, Melhor solução encontrada: {best_sol
 print("\nTestando critério de parada: número máximo de iterações sem melhoria")
 best_solution_no_improvement = grasp("no_improvement", 5, solutions, neighbourhood, alpha=0.2)
 print(f"Melhor solução encontrada: {best_solution_no_improvement.objective_value()}")
-
