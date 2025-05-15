@@ -7,7 +7,6 @@ def grasp(
         stopping_criterion,
         criterion_value,
         solutions,
-        neighbourhood,
         alpha=0.2
           ):
     
@@ -27,13 +26,12 @@ def grasp(
         #print(f"Iteração {iteration_count}...")
 
         current_solution = ConstructiveAlgorithm(solutions, alpha)
-
         if current_solution is None:
             #print("Nenhuma solução válida gerada.")
             if stopping_criterion == "no_improvement" and best_solution_overall is not None:
                  iterations_without_improvement += 1
         else:
-            current_solution = BestImprovement(current_solution, neighbourhood)
+            current_solution = BestImprovement(current_solution)
             
             if current_solution is not None:
                 current_objective_value = current_solution.objective_value()

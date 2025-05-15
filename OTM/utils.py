@@ -28,18 +28,26 @@ def ConstructiveAlgorithm(solutions, alpha = 0.2):
     return random.choice(candidatesList)
     
 
-def BestImprovement(original_solution, neighbourhood):
-
-    best_solution = original_solution
-    best_obj_value = original_solution.objective_value()
+def BestImprovement(original_solution):
+    n = len(original_solution.x)
+    best_solution = original_solution.clone()
+    best_obj_value = best_solution.objective_value()
+    
     convergence = False
-    while not(convergence):
+    while not convergence:
         convergence = True
+        neighbourhood = []
+        
+        for i in range(n):
+            neighbour = best_solution.clone()
+            neighbour.toggle_item(i)  
+            neighbourhood.append(neighbour)
+
         for current_solution in neighbourhood:
             current_obj_value = current_solution.objective_value()
-            if (current_obj_value > best_obj_value):
+            if current_obj_value > best_obj_value:
                 convergence = False
                 best_solution = current_solution
+                best_obj_value = current_obj_value
+
     return best_solution
-        
-        

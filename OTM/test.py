@@ -19,21 +19,21 @@ penalty_sets = [
 problem = KPFSProblem(items, penalty_sets, capacity=20, max_violations=1)
 
 solutions = [KPFSolution(problem) for _ in range(5)]
-neighbourhood = [sol.clone() for sol in solutions]
 
 # Testando critério de parada: máximo de iterações
 print("\nTestando critério de parada: máximo de iterações")
-best_solution_iterations = grasp("max_iterations", 10, solutions, neighbourhood, alpha=0.2)
+print(solutions)
+best_solution_iterations = grasp("max_iterations", 10, solutions, alpha=0.2)
 print(f"Melhor solução encontrada: {best_solution_iterations.objective_value()}")
 
 # Testando critério de parada: tempo máximo
 print("\nTestando critério de parada: tempo máximo")
 start_time = time.time()
-best_solution_time = grasp("max_time", 2, solutions, neighbourhood, alpha=0.2)  # Tempo máximo de 2 segundos
+best_solution_time = grasp("max_time", 2, solutions, alpha=0.2)  # Tempo máximo de 2 segundos
 elapsed_time = time.time() - start_time
 print(f"Tempo gasto: {elapsed_time:.2f}s, Melhor solução encontrada: {best_solution_time.objective_value()}")
 
 # Testando critério de parada: número máximo de iterações sem melhoria
 print("\nTestando critério de parada: número máximo de iterações sem melhoria")
-best_solution_no_improvement = grasp("no_improvement", 5, solutions, neighbourhood, alpha=0.2)
+best_solution_no_improvement = grasp("no_improvement", 5, solutions, alpha=0.2)
 print(f"Melhor solução encontrada: {best_solution_no_improvement.objective_value()}")
