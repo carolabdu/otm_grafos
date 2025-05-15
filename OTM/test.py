@@ -1,7 +1,8 @@
+import random
 import time
 from grasp import grasp
 from classes_solucao import KPFSolution
-from utils import ConstructiveAlgorithm, BestImprovement
+from utils import ConstructiveAlgorithm, BestImprovement, RandomSolutions
 from classes_base import KPFSProblem, Item, PenaltySet  # Importando as classes corretamente
 
 # Criando uma instância do problema
@@ -18,11 +19,10 @@ penalty_sets = [
 
 problem = KPFSProblem(items, penalty_sets, capacity=20, max_violations=1)
 
-solutions = [KPFSolution(problem) for _ in range(5)]
+solutions = RandomSolutions(problem, randomness=0.5, size=5)
 
 # Testando critério de parada: máximo de iterações
 print("\nTestando critério de parada: máximo de iterações")
-print(solutions)
 best_solution_iterations = grasp("max_iterations", 10, solutions, alpha=0.2)
 print(f"Melhor solução encontrada: {best_solution_iterations.objective_value()}")
 

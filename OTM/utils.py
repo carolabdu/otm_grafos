@@ -51,3 +51,15 @@ def BestImprovement(original_solution):
                 best_obj_value = current_obj_value
 
     return best_solution
+
+def RandomSolutions(problem, randomness=0.5, size=5):
+    solutions = []
+    for _ in range(size):
+        sol = KPFSolution(problem)  # Inicializa uma solução vazia
+        # Ativa aleatoriamente os itens
+        for i in range(len(problem.items)):
+            if random.random() < randomness:  # Probabilidade de 50% de selecionar cada item
+                sol.toggle_item(i)
+                print(sol.x)
+        solutions.append(sol)
+    return solutions
