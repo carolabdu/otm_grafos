@@ -4,6 +4,9 @@ from grasp import grasp
 from classes_solucao import KPFSolution
 from utils import ConstructiveAlgorithm, BestImprovement, RandomSolutions
 from classes_base import KPFSProblem, Item, PenaltySet  # Importando as classes corretamente
+from ILS import ils
+from simulated_annealing import simulated_annealing
+from tabu import tabu_search
 
 # Criando uma instância do problema
 items = [
@@ -30,6 +33,12 @@ print(f"Melhor solução encontrada: {best_solution_iterations.objective_value()
 print("\nTestando critério de parada: tempo máximo")
 start_time = time.time()
 best_solution_time = grasp("max_time", 2, solutions, alpha=0.2)  # Tempo máximo de 2 segundos
+best_ils = ils(problem, max_iter=50, perturbation_strength=2, alpha=0.2)
+print(f"Melhor solução pelo ILS: {best_ils.objective_value()}")
+best_sa = simulated_annealing(problem, ASmax=100, T_min=1e-3, T_init=100, alpha=0.95)
+print(f"Melhor solução pelo SA: {best_sa.objective_value()}")
+best_tabu = tabu_search(problem, max_iter=100, max_tabu_size=10)
+print(f"Melhor solução pelo Tabu Search: {best_tabu.objective_value()}")
 elapsed_time = time.time() - start_time
 print(f"Tempo gasto: {elapsed_time:.2f}s, Melhor solução encontrada: {best_solution_time.objective_value()}")
 

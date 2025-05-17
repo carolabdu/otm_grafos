@@ -31,7 +31,7 @@ def ils(problem, max_iter=100, perturbation_strength=2, alpha=0.2):
     # 1. Gera conjunto de soluções iniciais e seleciona uma com alpha (GRASP-style)
     initial_solutions = RandomSolutions(problem, size=10, randomness=0.5)
     current_solution = ConstructiveAlgorithm(initial_solutions, alpha=alpha)
-    current_solution = BestImprovement(current_solution, get_neighborhood(current_solution))
+    current_solution = BestImprovement(current_solution)
 
     best_solution = current_solution.clone()
     best_value = best_solution.objective_value()
@@ -41,7 +41,7 @@ def ils(problem, max_iter=100, perturbation_strength=2, alpha=0.2):
         perturbed = perturb_solution(current_solution, strength=perturbation_strength)
 
         # 3. Busca local na solução perturbada
-        improved = BestImprovement(perturbed, get_neighborhood(perturbed))
+        improved = BestImprovement(perturbed)
 
         # 4. Aceita se melhorar
         if improved.objective_value() > best_value:
