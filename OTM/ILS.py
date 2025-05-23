@@ -29,7 +29,7 @@ def ils(problem, max_iter=100, perturbation_strength=2, alpha=0.2):
     ILS para o problema KPFS usando as funções já existentes.
     """
     # 1. Gera conjunto de soluções iniciais e seleciona uma com alpha (GRASP-style)
-    initial_solutions = RandomSolutions(problem, size=10, randomness=0.5)
+    initial_solutions = RandomSolutions(problem, size=10)
     current_solution = ConstructiveAlgorithm(initial_solutions, alpha=alpha)
     current_solution = BestImprovement(current_solution)
 

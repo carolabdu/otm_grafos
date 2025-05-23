@@ -16,7 +16,7 @@ def tabu_search(problem, max_iter=100, max_tabu_size=10):
     """
 
     # === 1. Solução inicial ===
-    solutions = RandomSolutions(problem, size=10, randomness=0.5)
+    solutions = RandomSolutions(problem, size=10)
     s_prime = ConstructiveAlgorithm(solutions)
     best = s_prime.clone()
 

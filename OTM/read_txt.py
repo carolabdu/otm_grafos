@@ -1,5 +1,6 @@
 from typing import List
 from pathlib import Path
+from classes_base import Item, KPFSProblem, PenaltySet
 
 def load_kpfs_instance(file_path: str) -> KPFSProblem:
     with open(file_path, 'r') as file:

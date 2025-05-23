@@ -25,7 +25,7 @@ def simulated_annealing(problem, ASmax=100, T_min=1e-3, T_init=100.0, alpha=0.95
         Melhor solução encontrada (KPFSolution).
     """
     # Geração inicial com RCL
-    initial_solutions = RandomSolutions(problem, size=10, randomness=0.5)
+    initial_solutions = RandomSolutions(problem, size=10)
     s_star = ConstructiveAlgorithm(initial_solutions)
     s_current = s_star.clone()
     T = T_init
