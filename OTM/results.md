@@ -18,4 +18,7 @@ Além disso há um campo de observações para escrever sobre a versão do códi
 
 [Not Correlated](https://docs.google.com/spreadsheets/d/1sFv3xferD3cbdLWnvXK2YJLYIAeHOk8mWNfQQSdaCCA/edit?gid=0#gid=0) 
 
+## Análises 
+- Para 300 instâncias, o fully correlated foi o que apresentou maiores taxas de convergência
+  
 # Cenário 2
