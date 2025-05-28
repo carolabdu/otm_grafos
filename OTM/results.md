@@ -26,3 +26,10 @@ Além disso há um campo de observações para escrever sobre a versão do códi
 
 
 # Cenário 2
+[Correlated](https://docs.google.com/spreadsheets/d/1wcTOI1JpyrZLlNQBOJN3kgcpEvKESOu3KCFa9u1voYU/edit?gid=0#gid=0)
+
+# Cenário 3
+[Correlated](https://docs.google.com/spreadsheets/d/1kmNg4ueyWRaK9X4MkZXJR_mETh9-tnQXOs-6RjcTjng/edit?gid=0#gid=0)
+
+# Cenário 4 
+[Correlated](https://docs.google.com/spreadsheets/d/1--yZXGp29zM-RRoPXUE10WgK_lPQHtJIVp2EATbv1XM/edit?gid=0#gid=0)
