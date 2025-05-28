@@ -9,6 +9,7 @@ Além disso há um campo de observações para escrever sobre a versão do códi
 ## Versões: 
 ### Versão 27/05
 **Descrição:**  Primeira versão do código, sem melhorias
+
 **Análises:**
 - Para 300 instâncias, o fully correlated foi o que apresentou maiores taxas de convergência
 - ILS (300): podemos diminuir o número de iterações máximas ou criar critérios mais brutos para perturbar a solução
