@@ -8,14 +8,13 @@ Além disso há um campo de observações para escrever sobre a versão do códi
 
 ## Versões: 
 ### Versão 27/05
-** Descrição: ** Primeira versão do código, sem melhorias
+**Descrição:**  Primeira versão do código, sem melhorias
+**Análises:**
 - Para 300 instâncias, o fully correlated foi o que apresentou maiores taxas de convergência
 - ILS (300): podemos diminuir o número de iterações máximas ou criar critérios mais brutos para perturbar a solução
 - Simulated Annealing (300): Bons resultas para figir de ótimos locais, mas diminuiria a difrença entre as temperaturas para deixar a convergência mais rápida
 - O Grasp foi o que apresentou piores resultados de forma geral, algumas vezes preso em um ótimo local 
   
-- 
-
 
 # Cenário 1 
 [Correlated](https://docs.google.com/spreadsheets/d/14i2VdClA8FTzpLvNcpI_7QF2cboT4kYtEHizp_jr1gE/edit?hl=pt-br&gid=0#gid=0)
