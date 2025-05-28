@@ -33,5 +33,10 @@ Além disso há um campo de observações para escrever sobre a versão do códi
 # Cenário 3
 [Correlated](https://docs.google.com/spreadsheets/d/1kmNg4ueyWRaK9X4MkZXJR_mETh9-tnQXOs-6RjcTjng/edit?gid=0#gid=0)
 
+[Fully  Correlated](https://docs.google.com/spreadsheets/d/1ekFyV2B80fsSDIsg0BeognzIQYx2oR6In0I9I4eo50g/edit?gid=0#gid=0)
+
 # Cenário 4 
 [Correlated](https://docs.google.com/spreadsheets/d/1--yZXGp29zM-RRoPXUE10WgK_lPQHtJIVp2EATbv1XM/edit?gid=0#gid=0)
+
+[Fully  Correlated](https://docs.google.com/spreadsheets/d/18AY63I1ZspxhDq1DmqeokNu_iuI-cq0r_AWGfVQ-QXA/edit?gid=0#gid=0)
+
