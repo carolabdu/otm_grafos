@@ -25,14 +25,13 @@ KPFSolution PerturbSolution(const KPFSolution& solution, int strength) {
 }
 
 
-KPFSolution ILS(const KPFSProblem& problem, int max_iterations, int perturbation_strength, float alpha){
+KPFSolution ILS(const KPFSProblem& problem, int max_iterations, int perturbation_strength, float alpha, int relaxation){
 
     vector<KPFSolution> initial_solutions = RandomSolutions(problem, 10);
     KPFSolution current_solution = ConstructiveAlgorithm(initial_solutions, alpha);
     auto current_ptr = make_unique<KPFSolution>(BestImprovement(current_solution));
     float current_value = current_ptr->objectiveValue();
-
-    // 3) Initialize best = current
+    int iterations_no_improvement = 0;
     auto best_ptr = make_unique<KPFSolution>(*current_ptr);
     float best_value = current_value;
 
@@ -44,10 +43,14 @@ KPFSolution ILS(const KPFSProblem& problem, int max_iterations, int perturbation
             best_ptr = make_unique<KPFSolution>(move(improved));
             best_value = improved.objectiveValue();
         }
+        else{
+            iterations_no_improvement +=1;
+        }
 
-        // d) For next iteration, set current_ptr = improved (always keeps climbing)
         current_ptr = make_unique<KPFSolution>(*best_ptr);
         current_value = best_value;
+
+        if(iterations_no_improvement >= relaxation) break;
     }
 
     // Return the best solution found
