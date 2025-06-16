@@ -1,0 +1,9 @@
+Scenario,CorrelationType,Size,InstanceFile,Algorithm,Run,ObjectiveValue,ExecutionTime,Error
+scenario1,correlated_sc1,300,kpfs_1.txt,GRASP,1,654.000000,7.1504,
+scenario1,correlated_sc1,300,kpfs_1.txt,ILS,1,706.000000,0.6552,
+scenario1,correlated_sc1,300,kpfs_1.txt,SA,1,653.000000,0.1434,
+scenario1,correlated_sc1,300,kpfs_1.txt,TabuSearch,1,674.000000,0.1830,
+scenario1,correlated_sc1,300,kpfs_1.txt,GRASP,2,626.000000,5.7557,
+scenario1,correlated_sc1,300,kpfs_1.txt,ILS,2,705.000000,0.6896,
+scenario1,correlated_sc1,300,kpfs_1.txt,SA,2,614.000000,0.1830,
+scenario1,correlated_sc1,300,kpfs_1.txt,TabuSearch,2,666.000000,0.1815,
