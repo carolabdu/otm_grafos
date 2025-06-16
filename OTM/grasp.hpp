@@ -5,6 +5,6 @@
 
 using namespace std;
 
-KPFSolution GRASP(const KPFSProblem& problem, int nRandom = 5, int maxIterations = 100);
+KPFSolution GRASP(const KPFSProblem& problem, int nRandom = 5, int maxIterations = 100, int relaxation = 10);
 
 #endif
