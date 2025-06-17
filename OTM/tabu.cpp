@@ -9,10 +9,9 @@ KPFSolution TabuSearch(const KPFSProblem& problem,
                        int max_iter,
                        int max_tabu_size)
 {
-    std::vector<KPFSolution> init_pool = RandomSolutions(problem, 10);
-    KPFSolution constructed = ConstructiveAlgorithm(init_pool);
-    
-    auto s_prime_ptr = std::make_unique<KPFSolution>(constructed.clone());
+    KPFSolution initial = ConstructiveAlgorithm(problem, 0); 
+
+    auto s_prime_ptr = std::make_unique<KPFSolution>(initial.clone());
     auto best_ptr    = std::make_unique<KPFSolution>(*s_prime_ptr);
 
     std::vector<int> tabu_list;

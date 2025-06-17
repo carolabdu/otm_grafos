@@ -6,6 +6,6 @@
 
 
 KPFSolution Get_Random_Neighbour(const KPFSolution& solution, std::mt19937& gen);
-KPFSolution Simulated_Annealing(KPFSProblem problem, int ASmax = 100, float T_min = 1e-3, float T_init = 100.0, float alpha = 0.95);
+KPFSolution Simulated_Annealing(KPFSProblem problem, int ASmax = 100, float T_min = 1e-3, float T_init = 100.0, float alpha = 0.8);
 
 #endif

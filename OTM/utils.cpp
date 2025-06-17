@@ -8,34 +8,61 @@
 
 using namespace std;
 
-KPFSolution ConstructiveAlgorithm(vector<KPFSolution> solutions, float alpha){
+KPFSolution ConstructiveAlgorithm(const KPFSProblem& problem, float alpha) {
+    KPFSolution solution(problem);  // Inicio com solução vazia
+    std::vector<int> remaining_items(problem.items().size());
+    std::iota(remaining_items.begin(), remaining_items.end(), 0);
 
-    float obj_value;
-    float h_min = 1e20;
-    float h_max = -1e20;
-    for (KPFSolution& solution : solutions){
-        obj_value = solution.objectiveValue();
-        if (obj_value < h_min) h_min = obj_value;
-        else{
-            if (obj_value > h_max) h_max = obj_value;
+    std::mt19937 rng(std::random_device{}());
+
+    while (!remaining_items.empty()) {
+        // 1. Calcula a heurística h(i) = lucro/peso para todos os itens restantes
+        std::vector<std::pair<int, float>> heuristics;
+        for (int idx : remaining_items) {
+            const Item& item = problem.items()[idx];
+            if (item.weight == 0) continue; 
+            float heuristic = static_cast<float>(item.profit) / item.weight;
+            heuristics.emplace_back(idx, heuristic);
         }
-    }
-    float lower_range = h_min;
-    float upper_range = h_max + alpha * (h_min - h_max);
-    vector<KPFSolution> candidates_list;
-    for (KPFSolution& solution : solutions){
-        obj_value = solution.objectiveValue();
-        if (obj_value <= upper_range && obj_value >= lower_range){
-            candidates_list.push_back(solution);
+
+        if (heuristics.empty()) break;
+
+        // 2. Cálculo de h_min and h_max
+        float h_min = std::numeric_limits<float>::infinity();
+        float h_max = -std::numeric_limits<float>::infinity();
+        for (const auto& [_, h] : heuristics) {
+            if (h < h_min) h_min = h;
+            if (h > h_max) h_max = h;
         }
+
+        // 3. Construção da RCL: itens com h(i) >= h_min + α*(h_max - h_min)
+        float threshold = h_min + alpha * (h_max - h_min);
+        std::vector<int> rcl;
+        for (const auto& [idx, h] : heuristics) {
+            if (h >= threshold) {
+                rcl.push_back(idx);
+            }
+        }
+
+        if (rcl.empty()) break;
+
+        // 4. Seleção aleatória de um item da RCL
+        std::uniform_int_distribution<int> dist(0, rcl.size() - 1);
+        int selected = rcl[dist(rng)];
+
+        // 5. Tentativa de adicionar o item (toggle) and checagem da viabilidade
+        solution.toggleItem(selected);
+        if (solution.totalWeight() > problem.capacity() ||
+            solution.totalViolationCount() > problem.maxViolations()) {
+            // Revert toggle if infeasible
+            solution.toggleItem(selected);
+        }
+
+        // 6. Remove o item selecionado do conjunto de candidatos
+        remaining_items.erase(std::remove(remaining_items.begin(), remaining_items.end(), selected), remaining_items.end());
     }
-    srand(time(0));
-    int randomIndex = std::rand() % candidates_list.size();
 
-    auto it = candidates_list.begin();
-    advance(it, randomIndex);
-    return  *it;
-
+    return solution;
 }
 
 
@@ -68,30 +95,4 @@ KPFSolution BestImprovement(const KPFSolution& original_solution) {
     }
 
     return *best_ptr;
-}
-
-vector<KPFSolution> RandomSolutions(const KPFSProblem& problem, int size) {
-    vector<KPFSolution> solutions;
-    solutions.reserve(size);
-
-    random_device rd;
-    mt19937 gen(rd());
-
-    for (int s = 0; s < size; ++s) {
-        KPFSolution sol(problem); 
-        vector<int> available_item_indices(problem.items().size());
-        for (int i = 0; i < static_cast<int>(available_item_indices.size()); ++i) {
-            available_item_indices[i] = i;
-        }
-        shuffle(available_item_indices.begin(), available_item_indices.end(), gen);
-        for (int item_idx : available_item_indices) {
-            sol.toggleItem(item_idx);
-            if (sol.totalWeight() > problem.capacity() || sol.totalViolationCount() > problem.maxViolations()) {
-                sol.toggleItem(item_idx);
-            }
-        }
-        
-        solutions.push_back(sol);
-    }
-    return solutions;
 }

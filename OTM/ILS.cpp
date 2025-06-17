@@ -10,26 +10,48 @@ KPFSolution PerturbSolution(const KPFSolution& solution, int strength) {
     auto perturbed_ptr = std::make_unique<KPFSolution>(solution.clone());
     int n = static_cast<int>(perturbed_ptr->x().size());
 
-    // Sample 'strength' distinct indices
-    vector<int> indices(n);
-    iota(indices.begin(), indices.end(), 0);
+    / Conta quantos itens estão selecionados
+    int selected_count = 0;
+    for (int v : perturbed_ptr->x()) selected_count += v;
+
+    // Inicializa gerador aleatório
     random_device rd;
     mt19937 gen(rd());
-    shuffle(indices.begin(), indices.end(), gen);
 
-    for (int i = 0; i < strength && i < n; ++i) {
-        perturbed_ptr->toggleItem(indices[i]);
+    // Decide aleatoriamente quantos remover (máximo strength e selected_count)
+    std::uniform_int_distribution<int> remove_dist(0, std::min(strength, selected_count));
+    int num_remove = remove_dist(gen);
+    int num_add = strength - num_remove;
+
+    // Separa índices selecionados e não selecionados
+    std::vector<int> selected_indices;
+    std::vector<int> not_selected_indices;
+    for (int i = 0; i < n; ++i) {
+        if (perturbed_ptr->x()[i] == 1) selected_indices.push_back(i);
+        else not_selected_indices.push_back(i);
     }
 
-    return *perturbed_ptr;  // returns by copy (uses copy ctor)
+    std::shuffle(selected_indices.begin(), selected_indices.end(), gen);
+    std::shuffle(not_selected_indices.begin(), not_selected_indices.end(), gen);
+
+    // Remove itens
+    for (int i = 0; i < num_remove && i < (int)selected_indices.size(); ++i) {
+        perturbed_ptr->toggleItem(selected_indices[i]);
+    }
+
+    // Adiciona itens
+    for (int i = 0; i < num_add && i < (int)not_selected_indices.size(); ++i) {
+        perturbed_ptr->toggleItem(not_selected_indices[i]);
+    }
+
+    return perturbed_ptr; // retorna unique_ptr
 }
 
 
-KPFSolution ILS(const KPFSProblem& problem, int max_iterations, int perturbation_strength, float alpha, int relaxation){
+KPFSolution ILS(const KPFSProblem& problem, int max_iterations, int perturbation_strength, float alpha=0.2, int relaxation){
 
-    vector<KPFSolution> initial_solutions = RandomSolutions(problem, 10);
-    KPFSolution current_solution = ConstructiveAlgorithm(initial_solutions, alpha);
-    auto current_ptr = make_unique<KPFSolution>(BestImprovement(current_solution));
+    KPFSolution initial = ConstructiveAlgorithm(problem, alpha);
+    auto current_ptr = make_unique<KPFSolution>(BestImprovement(initial));
     float current_value = current_ptr->objectiveValue();
     int iterations_no_improvement = 0;
     auto best_ptr = make_unique<KPFSolution>(*current_ptr);
