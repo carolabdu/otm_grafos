@@ -17,7 +17,7 @@ KPFSolution Get_Random_Neighbour(const KPFSolution& solution, std::mt19937& gen)
     return neighbour;
 }
 
-KPFSolution Simulated_Annealing(KPFSProblem problem, int ASmax, float T_min, float T_init, float alpha=0.8){
+KPFSolution Simulated_Annealing(KPFSProblem problem, int ASmax, float T_min, float T_init, float alpha){
     KPFSolution constructed = ConstructiveAlgorithm(problem, alpha);
 
     auto s_star_ptr    = make_unique<KPFSolution>(constructed.clone());

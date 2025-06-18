@@ -84,9 +84,6 @@ int main() {
                         continue;
                     }
 
-                    // Generate initial pool for GRASP
-                    auto initial_pool = RandomSolutions(problem, INITIAL_SOLUTION_POOL_SIZE);
-
                     // Per-algo accumulators for means
                     std::map<std::string, std::vector<double>> obj_vals;
                     std::map<std::string, std::vector<double>> times;

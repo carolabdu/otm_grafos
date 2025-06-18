@@ -10,7 +10,7 @@ KPFSolution PerturbSolution(const KPFSolution& solution, int strength) {
     auto perturbed_ptr = std::make_unique<KPFSolution>(solution.clone());
     int n = static_cast<int>(perturbed_ptr->x().size());
 
-    / Conta quantos itens estão selecionados
+    // Conta quantos itens estão selecionados
     int selected_count = 0;
     for (int v : perturbed_ptr->x()) selected_count += v;
 
@@ -44,11 +44,11 @@ KPFSolution PerturbSolution(const KPFSolution& solution, int strength) {
         perturbed_ptr->toggleItem(not_selected_indices[i]);
     }
 
-    return perturbed_ptr; // retorna unique_ptr
+    return *perturbed_ptr; // retorna unique_ptr
 }
 
 
-KPFSolution ILS(const KPFSProblem& problem, int max_iterations, int perturbation_strength, float alpha=0.2, int relaxation){
+KPFSolution ILS(const KPFSProblem& problem, int max_iterations, int perturbation_strength, float alpha, int relaxation){
 
     KPFSolution initial = ConstructiveAlgorithm(problem, alpha);
     auto current_ptr = make_unique<KPFSolution>(BestImprovement(initial));
