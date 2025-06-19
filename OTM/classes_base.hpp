@@ -33,6 +33,7 @@ public:
     double capacity() const;
     std::size_t maxViolations() const;
     const std::vector<std::vector<std::size_t>>& itemToSets() const;
+
 private:
     std::vector<Item> items_;
     std::vector<PenaltySet> penalty_sets_;
@@ -40,17 +41,24 @@ private:
     std::size_t max_violations_;
     std::vector<std::vector<std::size_t>> item_to_sets_;
     void buildItemIndex();
-    };
+};
 
 class KPFSolution {
 public:
-    explicit KPFSolution(const KPFSProblem& problem); 
+    explicit KPFSolution(const KPFSProblem& problem);
 
-    void toggleItem(std::size_t index);
+    // incremental updates (enforcing capacity & global k)
+    bool addItem(std::size_t idx);
+    bool removeItem(std::size_t idx);
+    void toggleItem(std::size_t idx);
+
+    // clone solution
     KPFSolution clone() const;
+
+    // objective
     double objectiveValue() const;
-    
-    // Getters
+
+    // getters
     const std::vector<int>& x() const;
     double totalProfit() const;
     double totalWeight() const;
@@ -66,7 +74,11 @@ private:
     std::vector<std::size_t> penalty_violations_;
     double total_penalty_;
     std::size_t total_violation_count_;
+
+    // helper: raw counts per penalty-set
+    std::vector<std::size_t> penalty_counts_;
+
+    // full recompute
     void recalculateAll();
-    
 };
-#endif
+#endif // CLASSES_BASE_HPP

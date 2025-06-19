@@ -56,8 +56,6 @@ int main() {
         std::string scenario = "scenario" + std::to_string(s);
         std::vector<std::string> corr_types = {
             "correlated_sc" + std::to_string(s),
-            "fully_correlated_sc" + std::to_string(s),
-            "not_correlated_sc" + std::to_string(s)
         };
         for (auto& corr : corr_types) {
             for (auto& size : {"300","500","700","800","1000"}) {
@@ -102,10 +100,10 @@ int main() {
                                     auto best = GRASP(problem, 5, 100);
                                     objective = best.objectiveValue();
                                 } else if (algo.name == "ILS") {
-                                    auto best = ILS(problem, 100, 2, 0.2f);
+                                    auto best = ILS(problem, 100, 2, 0.8, 10);
                                     objective = best.objectiveValue();
                                 } else if (algo.name == "SA") {
-                                    auto best = Simulated_Annealing(problem, 100, 1e-3f, 100.0f, 0.95f);
+                                    auto best = Simulated_Annealing(problem, 100, 1e-3f, 100.0f, 0.8);
                                     objective = best.objectiveValue();
                                 } else if (algo.name == "TabuSearch") {
                                     auto best = TabuSearch(problem, 100, 10);

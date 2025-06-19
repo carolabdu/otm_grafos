@@ -1,0 +1,503 @@
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls   s/call   s/call  name    
+ 99.52     28.34    28.34  6966155     0.00     0.00  KPFSolution::recalculateAll()
+  0.14     28.38     0.04                             _init
+  0.11     28.41     0.03       81     0.00     0.31  ConstructiveAlgorithm(KPFSProblem const&, float)
+  0.07     28.43     0.02  2428113     0.00     0.00  KPFSolution::objectiveValue() const
+  0.07     28.45     0.02  2308191     0.00     0.00  KPFSolution::clone() const
+  0.04     28.46     0.01  2308277     0.00     0.00  KPFSolution::KPFSolution(KPFSProblem const&)
+  0.04     28.47     0.01    24436     0.00     0.00  BestImprovement(KPFSolution const&)
+  0.04     28.48     0.01        5     0.00     4.70  Simulated_Annealing(KPFSProblem, int, float, float, float)
+  0.00     28.48     0.00  3657231     0.00     0.00  KPFSProblem::items() const
+  0.00     28.48     0.00  2349687     0.00     0.00  KPFSolution::toggleItem(unsigned long)
+  0.00     28.48     0.00   255912     0.00     0.00  std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::operator()()
+  0.00     28.48     0.00   132766     0.00     0.00  KPFSolution::x() const
+  0.00     28.48     0.00   112505     0.00     0.00  GRASP(KPFSProblem const&, int, int, int, float)
+  0.00     28.48     0.00   112500     0.00     0.00  Get_Random_Neighbour(KPFSolution const&, std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&)
+  0.00     28.48     0.00   111471     0.00     0.00  void std::vector<int, std::allocator<int> >::_M_realloc_insert<int const&>(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int const&)
+  0.00     28.48     0.00    24300     0.00     0.00  KPFSProblem::capacity() const
+  0.00     28.48     0.00    24300     0.00     0.00  KPFSolution::totalWeight() const
+  0.00     28.48     0.00    19853     0.00     0.00  std::vector<main::Algo, std::allocator<main::Algo> >::~vector()
+  0.00     28.48     0.00     9715     0.00     0.00  ILS(KPFSProblem const&, int, int, float, int)
+  0.00     28.48     0.00     9002     0.00     0.00  KPFSProblem::KPFSProblem(std::vector<Item, std::allocator<Item> > const&, std::vector<PenaltySet, std::allocator<PenaltySet> > const&, double, unsigned long)
+  0.00     28.48     0.00     7018     0.00     0.00  KPFSProblem::maxViolations() const
+  0.00     28.48     0.00     7018     0.00     0.00  KPFSolution::totalViolationCount() const
+  0.00     28.48     0.00     6315     0.00     0.00  TabuSearch(KPFSProblem const&, int, int)
+  0.00     28.48     0.00     6043     0.00     0.00  std::_Rb_tree<unsigned long, unsigned long, std::_Identity<unsigned long>, std::less<unsigned long>, std::allocator<unsigned long> >::_M_get_insert_hint_unique_pos(std::_Rb_tree_const_iterator<unsigned long>, unsigned long const&)
+  0.00     28.48     0.00     4489     0.00     0.00  std::_Rb_tree<unsigned long, unsigned long, std::_Identity<unsigned long>, std::less<unsigned long>, std::allocator<unsigned long> >::_M_get_insert_unique_pos(unsigned long const&)
+  0.00     28.48     0.00     1736     0.00     0.00  void std::vector<unsigned long, std::allocator<unsigned long> >::_M_realloc_insert<unsigned long const&>(__gnu_cxx::__normal_iterator<unsigned long*, std::vector<unsigned long, std::allocator<unsigned long> > >, unsigned long const&)
+  0.00     28.48     0.00     1500     0.00     0.00  PenaltySet::PenaltySet(std::vector<unsigned long, std::allocator<unsigned long> > const&, unsigned long, double)
+  0.00     28.48     0.00      506     0.00     0.00  std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::_M_gen_rand()
+  0.00     28.48     0.00      300     0.00     0.00  Item::Item(unsigned long, double, double)
+  0.00     28.48     0.00      130     0.00     0.00  void std::shuffle<__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&>(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&)
+  0.00     28.48     0.00       82     0.00     0.00  void std::vector<PenaltySet, std::allocator<PenaltySet> >::_M_realloc_insert<std::vector<unsigned long, std::allocator<unsigned long> >&, int&, double>(__gnu_cxx::__normal_iterator<PenaltySet*, std::vector<PenaltySet, std::allocator<PenaltySet> > >, std::vector<unsigned long, std::allocator<unsigned long> >&, int&, double&&)
+  0.00     28.48     0.00       65     0.00     0.00  PerturbSolution(KPFSolution const&, int)
+  0.00     28.48     0.00       32     0.00     0.00  void std::vector<double, std::allocator<double> >::_M_realloc_insert<double const&>(__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double const&)
+  0.00     28.48     0.00       20     0.00     0.00  std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > __gnu_cxx::__to_xstring<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, char>(int (*)(char*, unsigned long, char const*, __va_list_tag*), unsigned long, char const*, ...)
+  0.00     28.48     0.00       13     0.00     0.00  void std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::_M_realloc_insert<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>(__gnu_cxx::__normal_iterator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+  0.00     28.48     0.00        8     0.00     0.00  std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<double, std::allocator<double> > >, std::_Select1st<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<double, std::allocator<double> > > >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<double, std::allocator<double> > > > >::_M_get_insert_hint_unique_pos(std::_Rb_tree_const_iterator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<double, std::allocator<double> > > >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+  0.00     28.48     0.00        7     0.00     0.00  PenaltySet* std::__do_uninit_copy<__gnu_cxx::__normal_iterator<PenaltySet const*, std::vector<PenaltySet, std::allocator<PenaltySet> > >, PenaltySet*>(__gnu_cxx::__normal_iterator<PenaltySet const*, std::vector<PenaltySet, std::allocator<PenaltySet> > >, __gnu_cxx::__normal_iterator<PenaltySet const*, std::vector<PenaltySet, std::allocator<PenaltySet> > >, PenaltySet*)
+  0.00     28.48     0.00        6     0.00     0.00  std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string<std::allocator<char> >(char const*, std::allocator<char> const&)
+  0.00     28.48     0.00        5     0.00     0.00  std::vector<unsigned long, std::allocator<unsigned long> >* std::__do_uninit_copy<__gnu_cxx::__normal_iterator<std::vector<unsigned long, std::allocator<unsigned long> > const*, std::vector<std::vector<unsigned long, std::allocator<unsigned long> >, std::allocator<std::vector<unsigned long, std::allocator<unsigned long> > > > >, std::vector<unsigned long, std::allocator<unsigned long> >*>(__gnu_cxx::__normal_iterator<std::vector<unsigned long, std::allocator<unsigned long> > const*, std::vector<std::vector<unsigned long, std::allocator<unsigned long> >, std::allocator<std::vector<unsigned long, std::allocator<unsigned long> > > > >, __gnu_cxx::__normal_iterator<std::vector<unsigned long, std::allocator<unsigned long> > const*, std::vector<std::vector<unsigned long, std::allocator<unsigned long> >, std::allocator<std::vector<unsigned long, std::allocator<unsigned long> > > > >, std::vector<unsigned long, std::allocator<unsigned long> >*)
+  0.00     28.48     0.00        2     0.00     0.00  KPFSProblem::buildItemIndex()
+  0.00     28.48     0.00        2     0.00     0.00  std::vector<std::vector<unsigned long, std::allocator<unsigned long> >, std::allocator<std::vector<unsigned long, std::allocator<unsigned long> > > >::_M_fill_assign(unsigned long, std::vector<unsigned long, std::allocator<unsigned long> > const&)
+  0.00     28.48     0.00        2     0.00     0.00  std::__cxx11::to_string(int)
+  0.00     28.48     0.00        2     0.00     0.00  std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<double, std::allocator<double> > >, std::_Select1st<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<double, std::allocator<double> > > >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<double, std::allocator<double> > > > >::_M_get_insert_unique_pos(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+  0.00     28.48     0.00        2     0.00     0.00  std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > std::operator+<char, std::char_traits<char>, std::allocator<char> >(char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&&)
+  0.00     28.48     0.00        1     0.00     3.33  loadKPFSInstance(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+  0.00     28.48     0.00        1     0.00     0.00  std::basic_ostream<char, std::char_traits<char> >& std::filesystem::__cxx11::operator<< <char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, std::filesystem::__cxx11::path const&)
+  0.00     28.48     0.00        1     0.00     0.00  std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::vector(std::initializer_list<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > const&)
+  0.00     28.48     0.00        1     0.00     0.00  std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::~vector()
+  0.00     28.48     0.00        1     0.00     0.00  std::vector<unsigned long, std::allocator<unsigned long> >* std::__do_uninit_fill_n<std::vector<unsigned long, std::allocator<unsigned long> >*, unsigned long, std::vector<unsigned long, std::allocator<unsigned long> > >(std::vector<unsigned long, std::allocator<unsigned long> >*, unsigned long, std::vector<unsigned long, std::allocator<unsigned long> > const&)
+
+ %         the percentage of the total running time of the
+time       program used by this function.
+
+cumulative a running sum of the number of seconds accounted
+ seconds   for by this function and those listed above it.
+
+ self      the number of seconds accounted for by this
+seconds    function alone.  This is the major sort for this
+           listing.
+
+calls      the number of times this function was invoked, if
+           this function is profiled, else blank.
+
+ self      the average number of milliseconds spent in this
+ms/call    function per call, if this function is profiled,
+	   else blank.
+
+ total     the average number of milliseconds spent in this
+ms/call    function and its descendents per call, if this
+	   function is profiled, else blank.
+
+name       the name of the function.  This is the minor sort
+           for this listing. The index shows the location of
+	   the function in the gprof listing. If the index is
+	   in parenthesis it shows where it would appear in
+	   the gprof listing if it were to be printed.
+
+Copyright (C) 2012-2023 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+		     Call graph (explanation follows)
+
+
+granularity: each sample hit covers 2 byte(s) for 0.04% of 28.48 seconds
+
+index % time    self  children    called     name
+                                                 <spontaneous>
+[1]     99.9    0.00   28.44                 main [1]
+                0.01   23.48       5/5           Simulated_Annealing(KPFSProblem, int, float, float, float) [5]
+                0.00    3.33       1/1           loadKPFSInstance(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [11]
+                0.00    1.62       5/5           ILS(KPFSProblem const&, int, int, float, int) <cycle 2> [13]
+                0.00    0.00       5/6315        TabuSearch(KPFSProblem const&, int, int) [10]
+                0.00    0.00       5/112505      GRASP(KPFSProblem const&, int, int, int, float) [7]
+                0.00    0.00      20/2428113     KPFSolution::objectiveValue() const [15]
+                0.00    0.00   19853/19853       std::vector<main::Algo, std::allocator<main::Algo> >::~vector() [32]
+                0.00    0.00      54/82          void std::vector<PenaltySet, std::allocator<PenaltySet> >::_M_realloc_insert<std::vector<unsigned long, std::allocator<unsigned long> >&, int&, double>(__gnu_cxx::__normal_iterator<PenaltySet*, std::vector<PenaltySet, std::allocator<PenaltySet> > >, std::vector<unsigned long, std::allocator<unsigned long> >&, int&, double&&) [43]
+                0.00    0.00      32/32          void std::vector<double, std::allocator<double> >::_M_realloc_insert<double const&>(__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double const&) [44]
+                0.00    0.00      20/20          std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > __gnu_cxx::__to_xstring<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, char>(int (*)(char*, unsigned long, char const*, __va_list_tag*), unsigned long, char const*, ...) [45]
+                0.00    0.00       6/6           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string<std::allocator<char> >(char const*, std::allocator<char> const&) [48]
+                0.00    0.00       5/7           PenaltySet* std::__do_uninit_copy<__gnu_cxx::__normal_iterator<PenaltySet const*, std::vector<PenaltySet, std::allocator<PenaltySet> > >, PenaltySet*>(__gnu_cxx::__normal_iterator<PenaltySet const*, std::vector<PenaltySet, std::allocator<PenaltySet> > >, __gnu_cxx::__normal_iterator<PenaltySet const*, std::vector<PenaltySet, std::allocator<PenaltySet> > >, PenaltySet*) <cycle 1> [47]
+                0.00    0.00       5/5           std::vector<unsigned long, std::allocator<unsigned long> >* std::__do_uninit_copy<__gnu_cxx::__normal_iterator<std::vector<unsigned long, std::allocator<unsigned long> > const*, std::vector<std::vector<unsigned long, std::allocator<unsigned long> >, std::allocator<std::vector<unsigned long, std::allocator<unsigned long> > > > >, std::vector<unsigned long, std::allocator<unsigned long> >*>(__gnu_cxx::__normal_iterator<std::vector<unsigned long, std::allocator<unsigned long> > const*, std::vector<std::vector<unsigned long, std::allocator<unsigned long> >, std::allocator<std::vector<unsigned long, std::allocator<unsigned long> > > > >, __gnu_cxx::__normal_iterator<std::vector<unsigned long, std::allocator<unsigned long> > const*, std::vector<std::vector<unsigned long, std::allocator<unsigned long> >, std::allocator<std::vector<unsigned long, std::allocator<unsigned long> > > > >, std::vector<unsigned long, std::allocator<unsigned long> >*) [49]
+                0.00    0.00       2/2           std::__cxx11::to_string(int) [52]
+                0.00    0.00       2/2           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > std::operator+<char, std::char_traits<char>, std::allocator<char> >(char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&&) [54]
+                0.00    0.00       1/1           std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::vector(std::initializer_list<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > const&) [56]
+                0.00    0.00       1/1           std::basic_ostream<char, std::char_traits<char> >& std::filesystem::__cxx11::operator<< <char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, std::filesystem::__cxx11::path const&) [55]
+                0.00    0.00       1/7           KPFSProblem::KPFSProblem(std::vector<Item, std::allocator<Item> > const&, std::vector<PenaltySet, std::allocator<PenaltySet> > const&, double, unsigned long) <cycle 1> [33]
+                0.00    0.00       1/1           std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::~vector() [57]
+-----------------------------------------------
+                0.00    0.00     130/6966155     PerturbSolution(KPFSolution const&, int) <cycle 2> [17]
+                0.17    0.00   41582/6966155     ConstructiveAlgorithm(KPFSProblem const&, float) [3]
+                0.46    0.00  112500/6966155     Get_Random_Neighbour(KPFSolution const&, std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&) [6]
+                0.59    0.00  145275/6966155     TabuSearch(KPFSProblem const&, int, int) [10]
+                8.34    0.00 2050200/6966155     BestImprovement(KPFSolution const&) [4]
+                9.39    0.00 2308191/6966155     KPFSolution::clone() const [8]
+                9.39    0.00 2308277/6966155     KPFSolution::KPFSolution(KPFSProblem const&) [9]
+[2]     99.5   28.34    0.00 6966155         KPFSolution::recalculateAll() [2]
+-----------------------------------------------
+                0.00    1.55       5/81          ILS(KPFSProblem const&, int, int, float, int) <cycle 2> [13]
+                0.00    1.55       5/81          Simulated_Annealing(KPFSProblem, int, float, float, float) [5]
+                0.00    1.55       5/81          TabuSearch(KPFSProblem const&, int, int) [10]
+                0.02   20.46      66/81          GRASP(KPFSProblem const&, int, int, int, float) [7]
+[3]     88.3    0.03   25.11      81         ConstructiveAlgorithm(KPFSProblem const&, float) [3]
+                0.01   24.93   24300/24436       BestImprovement(KPFSolution const&) [4]
+                0.17    0.00   41582/6966155     KPFSolution::recalculateAll() [2]
+                0.00    0.00      81/2308277     KPFSolution::KPFSolution(KPFSProblem const&) [9]
+                0.00    0.00 3657231/3657231     KPFSProblem::items() const [25]
+                0.00    0.00  110400/111471      void std::vector<int, std::allocator<int> >::_M_realloc_insert<int const&>(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int const&) [29]
+                0.00    0.00   41582/2349687     KPFSolution::toggleItem(unsigned long) [26]
+                0.00    0.00   24300/24300       KPFSolution::totalWeight() const [31]
+                0.00    0.00   24300/24300       KPFSProblem::capacity() const [30]
+                0.00    0.00    7018/7018        KPFSolution::totalViolationCount() const [35]
+                0.00    0.00    7018/7018        KPFSProblem::maxViolations() const [34]
+-----------------------------------------------
+                0.00    0.07      66/24436       GRASP(KPFSProblem const&, int, int, int, float) [7]
+                0.00    0.07      70/24436       ILS(KPFSProblem const&, int, int, float, int) <cycle 2> [13]
+                0.01   24.93   24300/24436       ConstructiveAlgorithm(KPFSProblem const&, float) [3]
+[4]     88.1    0.01   25.07   24436         BestImprovement(KPFSolution const&) [4]
+                0.02   16.69 2050336/2308191     KPFSolution::clone() const [8]
+                8.34    0.00 2050200/6966155     KPFSolution::recalculateAll() [2]
+                0.02    0.00 2050336/2428113     KPFSolution::objectiveValue() const [15]
+                0.00    0.00 2050200/2349687     KPFSolution::toggleItem(unsigned long) [26]
+                0.00    0.00   24300/255912      std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::operator()() [27]
+                0.00    0.00     136/132766      KPFSolution::x() const [28]
+-----------------------------------------------
+                0.01   23.48       5/5           main [1]
+[5]     82.5    0.01   23.48       5         Simulated_Annealing(KPFSProblem, int, float, float, float) [5]
+                0.00   21.93  112500/112500      Get_Random_Neighbour(KPFSolution const&, std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&) [6]
+                0.00    1.55       5/81          ConstructiveAlgorithm(KPFSProblem const&, float) [3]
+                0.00    0.00  231326/2428113     KPFSolution::objectiveValue() const [15]
+                0.00    0.00      10/2308191     KPFSolution::clone() const [8]
+                0.00    0.00  109337/255912      std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::operator()() [27]
+-----------------------------------------------
+                0.00   21.93  112500/112500      Simulated_Annealing(KPFSProblem, int, float, float, float) [5]
+[6]     77.0    0.00   21.93  112500         Get_Random_Neighbour(KPFSolution const&, std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&) [6]
+                0.00   20.55  112500/112505      GRASP(KPFSProblem const&, int, int, int, float) [7]
+                0.00    0.92  112500/2308191     KPFSolution::clone() const [8]
+                0.46    0.00  112500/6966155     KPFSolution::recalculateAll() [2]
+                0.00    0.00  112500/132766      KPFSolution::x() const [28]
+                0.00    0.00  112500/2349687     KPFSolution::toggleItem(unsigned long) [26]
+-----------------------------------------------
+                0.00    0.00       5/112505      main [1]
+                0.00   20.55  112500/112505      Get_Random_Neighbour(KPFSolution const&, std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&) [6]
+[7]     72.2    0.00   20.55  112505         GRASP(KPFSProblem const&, int, int, int, float) [7]
+                0.02   20.46      66/81          ConstructiveAlgorithm(KPFSProblem const&, float) [3]
+                0.00    0.07      66/24436       BestImprovement(KPFSolution const&) [4]
+                0.00    0.00       5/2308277     KPFSolution::KPFSolution(KPFSProblem const&) [9]
+                0.00    0.00      71/2428113     KPFSolution::objectiveValue() const [15]
+                0.00    0.00  112500/255912      std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::operator()() [27]
+-----------------------------------------------
+                0.00    0.00      10/2308191     Simulated_Annealing(KPFSProblem, int, float, float, float) [5]
+                0.00    0.00      65/2308191     PerturbSolution(KPFSolution const&, int) <cycle 2> [17]
+                0.00    0.92  112500/2308191     Get_Random_Neighbour(KPFSolution const&, std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&) [6]
+                0.00    1.18  145280/2308191     TabuSearch(KPFSProblem const&, int, int) [10]
+                0.02   16.69 2050336/2308191     BestImprovement(KPFSolution const&) [4]
+[8]     66.0    0.02   18.79 2308191         KPFSolution::clone() const [8]
+                0.01    9.39 2308191/2308277     KPFSolution::KPFSolution(KPFSProblem const&) [9]
+                9.39    0.00 2308191/6966155     KPFSolution::recalculateAll() [2]
+-----------------------------------------------
+                0.00    0.00       5/2308277     GRASP(KPFSProblem const&, int, int, int, float) [7]
+                0.00    0.00      81/2308277     ConstructiveAlgorithm(KPFSProblem const&, float) [3]
+                0.01    9.39 2308191/2308277     KPFSolution::clone() const [8]
+[9]     33.0    0.01    9.39 2308277         KPFSolution::KPFSolution(KPFSProblem const&) [9]
+                9.39    0.00 2308277/6966155     KPFSolution::recalculateAll() [2]
+-----------------------------------------------
+                0.00    0.00       5/6315        main [1]
+                0.00    0.01      13/6315        void std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::_M_realloc_insert<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>(__gnu_cxx::__normal_iterator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [16]
+                0.00    3.32    6297/6315        loadKPFSInstance(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [11]
+[10]    11.7    0.00    3.33    6315         TabuSearch(KPFSProblem const&, int, int) [10]
+                0.00    1.55       5/81          ConstructiveAlgorithm(KPFSProblem const&, float) [3]
+                0.00    1.18  145280/2308191     KPFSolution::clone() const [8]
+                0.59    0.00  145275/6966155     KPFSolution::recalculateAll() [2]
+                0.00    0.00  146275/2428113     KPFSolution::objectiveValue() const [15]
+                0.00    0.00  145275/2349687     KPFSolution::toggleItem(unsigned long) [26]
+                0.00    0.00     500/132766      KPFSolution::x() const [28]
+                0.00    0.00       5/111471      void std::vector<int, std::allocator<int> >::_M_realloc_insert<int const&>(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int const&) [29]
+-----------------------------------------------
+                0.00    3.33       1/1           main [1]
+[11]    11.7    0.00    3.33       1         loadKPFSInstance(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [11]
+                0.00    3.32    6297/6315        TabuSearch(KPFSProblem const&, int, int) [10]
+                0.00    0.01      13/13          void std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::_M_realloc_insert<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>(__gnu_cxx::__normal_iterator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [16]
+                0.00    0.00    1500/1500        PenaltySet::PenaltySet(std::vector<unsigned long, std::allocator<unsigned long> > const&, unsigned long, double) [39]
+                0.00    0.00     300/300         Item::Item(unsigned long, double, double) [41]
+                0.00    0.00       1/7           KPFSProblem::KPFSProblem(std::vector<Item, std::allocator<Item> > const&, std::vector<PenaltySet, std::allocator<PenaltySet> > const&, double, unsigned long) <cycle 1> [33]
+-----------------------------------------------
+[12]     5.7    0.00    1.62       5+9905    <cycle 2 as a whole> [12]
+                0.00    1.62    9715             ILS(KPFSProblem const&, int, int, float, int) <cycle 2> [13]
+                0.00    0.00      65             PerturbSolution(KPFSolution const&, int) <cycle 2> [17]
+                0.00    0.00     130             void std::shuffle<__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&>(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&) <cycle 2> [42]
+-----------------------------------------------
+                                9710             void std::shuffle<__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&>(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&) <cycle 2> [42]
+                0.00    1.62       5/5           main [1]
+[13]     5.7    0.00    1.62    9715         ILS(KPFSProblem const&, int, int, float, int) <cycle 2> [13]
+                0.00    1.55       5/81          ConstructiveAlgorithm(KPFSProblem const&, float) [3]
+                0.00    0.07      70/24436       BestImprovement(KPFSolution const&) [4]
+                0.00    0.00      85/2428113     KPFSolution::objectiveValue() const [15]
+                0.00    0.00    9710/255912      std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::operator()() [27]
+                                  65             PerturbSolution(KPFSolution const&, int) <cycle 2> [17]
+-----------------------------------------------
+                                                 <spontaneous>
+[14]     0.1    0.04    0.00                 _init [14]
+-----------------------------------------------
+                0.00    0.00      20/2428113     main [1]
+                0.00    0.00      71/2428113     GRASP(KPFSProblem const&, int, int, int, float) [7]
+                0.00    0.00      85/2428113     ILS(KPFSProblem const&, int, int, float, int) <cycle 2> [13]
+                0.00    0.00  146275/2428113     TabuSearch(KPFSProblem const&, int, int) [10]
+                0.00    0.00  231326/2428113     Simulated_Annealing(KPFSProblem, int, float, float, float) [5]
+                0.02    0.00 2050336/2428113     BestImprovement(KPFSolution const&) [4]
+[15]     0.1    0.02    0.00 2428113         KPFSolution::objectiveValue() const [15]
+-----------------------------------------------
+                0.00    0.01      13/13          loadKPFSInstance(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [11]
+[16]     0.0    0.00    0.01      13         void std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::_M_realloc_insert<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>(__gnu_cxx::__normal_iterator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [16]
+                0.00    0.01      13/6315        TabuSearch(KPFSProblem const&, int, int) [10]
+-----------------------------------------------
+                                  65             ILS(KPFSProblem const&, int, int, float, int) <cycle 2> [13]
+[17]     0.0    0.00    0.00      65         PerturbSolution(KPFSolution const&, int) <cycle 2> [17]
+                0.00    0.00      65/2308191     KPFSolution::clone() const [8]
+                0.00    0.00     130/6966155     KPFSolution::recalculateAll() [2]
+                0.00    0.00   19630/132766      KPFSolution::x() const [28]
+                0.00    0.00    1066/111471      void std::vector<int, std::allocator<int> >::_M_realloc_insert<int const&>(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int const&) [29]
+                0.00    0.00     130/2349687     KPFSolution::toggleItem(unsigned long) [26]
+                0.00    0.00      65/255912      std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::operator()() [27]
+                                 130             void std::shuffle<__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&>(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&) <cycle 2> [42]
+-----------------------------------------------
+[18]     0.0    0.00    0.00       7+9002    <cycle 1 as a whole> [18]
+                0.00    0.00    9002+13602       KPFSProblem::KPFSProblem(std::vector<Item, std::allocator<Item> > const&, std::vector<PenaltySet, std::allocator<PenaltySet> > const&, double, unsigned long) <cycle 1> [33]
+                0.00    0.00       7             PenaltySet* std::__do_uninit_copy<__gnu_cxx::__normal_iterator<PenaltySet const*, std::vector<PenaltySet, std::allocator<PenaltySet> > >, PenaltySet*>(__gnu_cxx::__normal_iterator<PenaltySet const*, std::vector<PenaltySet, std::allocator<PenaltySet> > >, __gnu_cxx::__normal_iterator<PenaltySet const*, std::vector<PenaltySet, std::allocator<PenaltySet> > >, PenaltySet*) <cycle 1> [47]
+-----------------------------------------------
+                0.00    0.00 3657231/3657231     ConstructiveAlgorithm(KPFSProblem const&, float) [3]
+[25]     0.0    0.00    0.00 3657231         KPFSProblem::items() const [25]
+-----------------------------------------------
+                0.00    0.00     130/2349687     PerturbSolution(KPFSolution const&, int) <cycle 2> [17]
+                0.00    0.00   41582/2349687     ConstructiveAlgorithm(KPFSProblem const&, float) [3]
+                0.00    0.00  112500/2349687     Get_Random_Neighbour(KPFSolution const&, std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&) [6]
+                0.00    0.00  145275/2349687     TabuSearch(KPFSProblem const&, int, int) [10]
+                0.00    0.00 2050200/2349687     BestImprovement(KPFSolution const&) [4]
+[26]     0.0    0.00    0.00 2349687         KPFSolution::toggleItem(unsigned long) [26]
+-----------------------------------------------
+                                  65             std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::operator()() [27]
+                0.00    0.00      65/255912      PerturbSolution(KPFSolution const&, int) <cycle 2> [17]
+                0.00    0.00    9710/255912      ILS(KPFSProblem const&, int, int, float, int) <cycle 2> [13]
+                0.00    0.00   24300/255912      BestImprovement(KPFSolution const&) [4]
+                0.00    0.00  109337/255912      Simulated_Annealing(KPFSProblem, int, float, float, float) [5]
+                0.00    0.00  112500/255912      GRASP(KPFSProblem const&, int, int, int, float) [7]
+[27]     0.0    0.00    0.00  255912+65      std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::operator()() [27]
+                0.00    0.00     506/506         std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::_M_gen_rand() [40]
+                                  65             std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::operator()() [27]
+-----------------------------------------------
+                0.00    0.00     136/132766      BestImprovement(KPFSolution const&) [4]
+                0.00    0.00     500/132766      TabuSearch(KPFSProblem const&, int, int) [10]
+                0.00    0.00   19630/132766      PerturbSolution(KPFSolution const&, int) <cycle 2> [17]
+                0.00    0.00  112500/132766      Get_Random_Neighbour(KPFSolution const&, std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&) [6]
+[28]     0.0    0.00    0.00  132766         KPFSolution::x() const [28]
+-----------------------------------------------
+                0.00    0.00       5/111471      TabuSearch(KPFSProblem const&, int, int) [10]
+                0.00    0.00    1066/111471      PerturbSolution(KPFSolution const&, int) <cycle 2> [17]
+                0.00    0.00  110400/111471      ConstructiveAlgorithm(KPFSProblem const&, float) [3]
+[29]     0.0    0.00    0.00  111471         void std::vector<int, std::allocator<int> >::_M_realloc_insert<int const&>(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int const&) [29]
+-----------------------------------------------
+                0.00    0.00   24300/24300       ConstructiveAlgorithm(KPFSProblem const&, float) [3]
+[30]     0.0    0.00    0.00   24300         KPFSProblem::capacity() const [30]
+-----------------------------------------------
+                0.00    0.00   24300/24300       ConstructiveAlgorithm(KPFSProblem const&, float) [3]
+[31]     0.0    0.00    0.00   24300         KPFSolution::totalWeight() const [31]
+-----------------------------------------------
+                                   8             std::vector<main::Algo, std::allocator<main::Algo> >::~vector() [32]
+                0.00    0.00   19853/19853       main [1]
+[32]     0.0    0.00    0.00   19853+8       std::vector<main::Algo, std::allocator<main::Algo> >::~vector() [32]
+                0.00    0.00       8/82          void std::vector<PenaltySet, std::allocator<PenaltySet> >::_M_realloc_insert<std::vector<unsigned long, std::allocator<unsigned long> >&, int&, double>(__gnu_cxx::__normal_iterator<PenaltySet*, std::vector<PenaltySet, std::allocator<PenaltySet> > >, std::vector<unsigned long, std::allocator<unsigned long> >&, int&, double&&) [43]
+                0.00    0.00       8/8           std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<double, std::allocator<double> > >, std::_Select1st<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<double, std::allocator<double> > > >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<double, std::allocator<double> > > > >::_M_get_insert_hint_unique_pos(std::_Rb_tree_const_iterator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<double, std::allocator<double> > > >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [46]
+                0.00    0.00       2/2           std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<double, std::allocator<double> > >, std::_Select1st<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<double, std::allocator<double> > > >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<double, std::allocator<double> > > > >::_M_get_insert_unique_pos(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [53]
+                                   8             std::vector<main::Algo, std::allocator<main::Algo> >::~vector() [32]
+-----------------------------------------------
+                               13602             KPFSProblem::KPFSProblem(std::vector<Item, std::allocator<Item> > const&, std::vector<PenaltySet, std::allocator<PenaltySet> > const&, double, unsigned long) <cycle 1> [33]
+                                9000             PenaltySet* std::__do_uninit_copy<__gnu_cxx::__normal_iterator<PenaltySet const*, std::vector<PenaltySet, std::allocator<PenaltySet> > >, PenaltySet*>(__gnu_cxx::__normal_iterator<PenaltySet const*, std::vector<PenaltySet, std::allocator<PenaltySet> > >, __gnu_cxx::__normal_iterator<PenaltySet const*, std::vector<PenaltySet, std::allocator<PenaltySet> > >, PenaltySet*) <cycle 1> [47]
+                0.00    0.00       1/7           main [1]
+                0.00    0.00       1/7           loadKPFSInstance(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [11]
+[33]     0.0    0.00    0.00    9002+13602   KPFSProblem::KPFSProblem(std::vector<Item, std::allocator<Item> > const&, std::vector<PenaltySet, std::allocator<PenaltySet> > const&, double, unsigned long) <cycle 1> [33]
+                0.00    0.00       2/2           KPFSProblem::buildItemIndex() [50]
+                                   2             PenaltySet* std::__do_uninit_copy<__gnu_cxx::__normal_iterator<PenaltySet const*, std::vector<PenaltySet, std::allocator<PenaltySet> > >, PenaltySet*>(__gnu_cxx::__normal_iterator<PenaltySet const*, std::vector<PenaltySet, std::allocator<PenaltySet> > >, __gnu_cxx::__normal_iterator<PenaltySet const*, std::vector<PenaltySet, std::allocator<PenaltySet> > >, PenaltySet*) <cycle 1> [47]
+                               13602             KPFSProblem::KPFSProblem(std::vector<Item, std::allocator<Item> > const&, std::vector<PenaltySet, std::allocator<PenaltySet> > const&, double, unsigned long) <cycle 1> [33]
+-----------------------------------------------
+                0.00    0.00    7018/7018        ConstructiveAlgorithm(KPFSProblem const&, float) [3]
+[34]     0.0    0.00    0.00    7018         KPFSProblem::maxViolations() const [34]
+-----------------------------------------------
+                0.00    0.00    7018/7018        ConstructiveAlgorithm(KPFSProblem const&, float) [3]
+[35]     0.0    0.00    0.00    7018         KPFSolution::totalViolationCount() const [35]
+-----------------------------------------------
+                0.00    0.00    6043/6043        PenaltySet::PenaltySet(std::vector<unsigned long, std::allocator<unsigned long> > const&, unsigned long, double) [39]
+[36]     0.0    0.00    0.00    6043         std::_Rb_tree<unsigned long, unsigned long, std::_Identity<unsigned long>, std::less<unsigned long>, std::allocator<unsigned long> >::_M_get_insert_hint_unique_pos(std::_Rb_tree_const_iterator<unsigned long>, unsigned long const&) [36]
+-----------------------------------------------
+                0.00    0.00    4489/4489        PenaltySet::PenaltySet(std::vector<unsigned long, std::allocator<unsigned long> > const&, unsigned long, double) [39]
+[37]     0.0    0.00    0.00    4489         std::_Rb_tree<unsigned long, unsigned long, std::_Identity<unsigned long>, std::less<unsigned long>, std::allocator<unsigned long> >::_M_get_insert_unique_pos(unsigned long const&) [37]
+-----------------------------------------------
+                0.00    0.00    1736/1736        KPFSProblem::buildItemIndex() [50]
+[38]     0.0    0.00    0.00    1736         void std::vector<unsigned long, std::allocator<unsigned long> >::_M_realloc_insert<unsigned long const&>(__gnu_cxx::__normal_iterator<unsigned long*, std::vector<unsigned long, std::allocator<unsigned long> > >, unsigned long const&) [38]
+-----------------------------------------------
+                0.00    0.00    1500/1500        loadKPFSInstance(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [11]
+[39]     0.0    0.00    0.00    1500         PenaltySet::PenaltySet(std::vector<unsigned long, std::allocator<unsigned long> > const&, unsigned long, double) [39]
+                0.00    0.00    6043/6043        std::_Rb_tree<unsigned long, unsigned long, std::_Identity<unsigned long>, std::less<unsigned long>, std::allocator<unsigned long> >::_M_get_insert_hint_unique_pos(std::_Rb_tree_const_iterator<unsigned long>, unsigned long const&) [36]
+                0.00    0.00    4489/4489        std::_Rb_tree<unsigned long, unsigned long, std::_Identity<unsigned long>, std::less<unsigned long>, std::allocator<unsigned long> >::_M_get_insert_unique_pos(unsigned long const&) [37]
+-----------------------------------------------
+                0.00    0.00     506/506         std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::operator()() [27]
+[40]     0.0    0.00    0.00     506         std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::_M_gen_rand() [40]
+-----------------------------------------------
+                0.00    0.00     300/300         loadKPFSInstance(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [11]
+[41]     0.0    0.00    0.00     300         Item::Item(unsigned long, double, double) [41]
+-----------------------------------------------
+                                 130             PerturbSolution(KPFSolution const&, int) <cycle 2> [17]
+[42]     0.0    0.00    0.00     130         void std::shuffle<__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&>(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&) <cycle 2> [42]
+                                9710             ILS(KPFSProblem const&, int, int, float, int) <cycle 2> [13]
+-----------------------------------------------
+                0.00    0.00       8/82          std::vector<main::Algo, std::allocator<main::Algo> >::~vector() [32]
+                0.00    0.00      20/82          std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > __gnu_cxx::__to_xstring<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, char>(int (*)(char*, unsigned long, char const*, __va_list_tag*), unsigned long, char const*, ...) [45]
+                0.00    0.00      54/82          main [1]
+[43]     0.0    0.00    0.00      82         void std::vector<PenaltySet, std::allocator<PenaltySet> >::_M_realloc_insert<std::vector<unsigned long, std::allocator<unsigned long> >&, int&, double>(__gnu_cxx::__normal_iterator<PenaltySet*, std::vector<PenaltySet, std::allocator<PenaltySet> > >, std::vector<unsigned long, std::allocator<unsigned long> >&, int&, double&&) [43]
+-----------------------------------------------
+                0.00    0.00      32/32          main [1]
+[44]     0.0    0.00    0.00      32         void std::vector<double, std::allocator<double> >::_M_realloc_insert<double const&>(__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double const&) [44]
+-----------------------------------------------
+                0.00    0.00      20/20          main [1]
+[45]     0.0    0.00    0.00      20         std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > __gnu_cxx::__to_xstring<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, char>(int (*)(char*, unsigned long, char const*, __va_list_tag*), unsigned long, char const*, ...) [45]
+                0.00    0.00      20/82          void std::vector<PenaltySet, std::allocator<PenaltySet> >::_M_realloc_insert<std::vector<unsigned long, std::allocator<unsigned long> >&, int&, double>(__gnu_cxx::__normal_iterator<PenaltySet*, std::vector<PenaltySet, std::allocator<PenaltySet> > >, std::vector<unsigned long, std::allocator<unsigned long> >&, int&, double&&) [43]
+-----------------------------------------------
+                0.00    0.00       8/8           std::vector<main::Algo, std::allocator<main::Algo> >::~vector() [32]
+[46]     0.0    0.00    0.00       8         std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<double, std::allocator<double> > >, std::_Select1st<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<double, std::allocator<double> > > >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<double, std::allocator<double> > > > >::_M_get_insert_hint_unique_pos(std::_Rb_tree_const_iterator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<double, std::allocator<double> > > >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [46]
+-----------------------------------------------
+                                   2             KPFSProblem::KPFSProblem(std::vector<Item, std::allocator<Item> > const&, std::vector<PenaltySet, std::allocator<PenaltySet> > const&, double, unsigned long) <cycle 1> [33]
+                0.00    0.00       5/7           main [1]
+[47]     0.0    0.00    0.00       7         PenaltySet* std::__do_uninit_copy<__gnu_cxx::__normal_iterator<PenaltySet const*, std::vector<PenaltySet, std::allocator<PenaltySet> > >, PenaltySet*>(__gnu_cxx::__normal_iterator<PenaltySet const*, std::vector<PenaltySet, std::allocator<PenaltySet> > >, __gnu_cxx::__normal_iterator<PenaltySet const*, std::vector<PenaltySet, std::allocator<PenaltySet> > >, PenaltySet*) <cycle 1> [47]
+                                9000             KPFSProblem::KPFSProblem(std::vector<Item, std::allocator<Item> > const&, std::vector<PenaltySet, std::allocator<PenaltySet> > const&, double, unsigned long) <cycle 1> [33]
+-----------------------------------------------
+                0.00    0.00       6/6           main [1]
+[48]     0.0    0.00    0.00       6         std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string<std::allocator<char> >(char const*, std::allocator<char> const&) [48]
+-----------------------------------------------
+                0.00    0.00       5/5           main [1]
+[49]     0.0    0.00    0.00       5         std::vector<unsigned long, std::allocator<unsigned long> >* std::__do_uninit_copy<__gnu_cxx::__normal_iterator<std::vector<unsigned long, std::allocator<unsigned long> > const*, std::vector<std::vector<unsigned long, std::allocator<unsigned long> >, std::allocator<std::vector<unsigned long, std::allocator<unsigned long> > > > >, std::vector<unsigned long, std::allocator<unsigned long> >*>(__gnu_cxx::__normal_iterator<std::vector<unsigned long, std::allocator<unsigned long> > const*, std::vector<std::vector<unsigned long, std::allocator<unsigned long> >, std::allocator<std::vector<unsigned long, std::allocator<unsigned long> > > > >, __gnu_cxx::__normal_iterator<std::vector<unsigned long, std::allocator<unsigned long> > const*, std::vector<std::vector<unsigned long, std::allocator<unsigned long> >, std::allocator<std::vector<unsigned long, std::allocator<unsigned long> > > > >, std::vector<unsigned long, std::allocator<unsigned long> >*) [49]
+-----------------------------------------------
+                0.00    0.00       2/2           KPFSProblem::KPFSProblem(std::vector<Item, std::allocator<Item> > const&, std::vector<PenaltySet, std::allocator<PenaltySet> > const&, double, unsigned long) <cycle 1> [33]
+[50]     0.0    0.00    0.00       2         KPFSProblem::buildItemIndex() [50]
+                0.00    0.00    1736/1736        void std::vector<unsigned long, std::allocator<unsigned long> >::_M_realloc_insert<unsigned long const&>(__gnu_cxx::__normal_iterator<unsigned long*, std::vector<unsigned long, std::allocator<unsigned long> > >, unsigned long const&) [38]
+                0.00    0.00       2/2           std::vector<std::vector<unsigned long, std::allocator<unsigned long> >, std::allocator<std::vector<unsigned long, std::allocator<unsigned long> > > >::_M_fill_assign(unsigned long, std::vector<unsigned long, std::allocator<unsigned long> > const&) [51]
+-----------------------------------------------
+                0.00    0.00       2/2           KPFSProblem::buildItemIndex() [50]
+[51]     0.0    0.00    0.00       2         std::vector<std::vector<unsigned long, std::allocator<unsigned long> >, std::allocator<std::vector<unsigned long, std::allocator<unsigned long> > > >::_M_fill_assign(unsigned long, std::vector<unsigned long, std::allocator<unsigned long> > const&) [51]
+                0.00    0.00       1/1           std::vector<unsigned long, std::allocator<unsigned long> >* std::__do_uninit_fill_n<std::vector<unsigned long, std::allocator<unsigned long> >*, unsigned long, std::vector<unsigned long, std::allocator<unsigned long> > >(std::vector<unsigned long, std::allocator<unsigned long> >*, unsigned long, std::vector<unsigned long, std::allocator<unsigned long> > const&) [58]
+-----------------------------------------------
+                0.00    0.00       2/2           main [1]
+[52]     0.0    0.00    0.00       2         std::__cxx11::to_string(int) [52]
+-----------------------------------------------
+                0.00    0.00       2/2           std::vector<main::Algo, std::allocator<main::Algo> >::~vector() [32]
+[53]     0.0    0.00    0.00       2         std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<double, std::allocator<double> > >, std::_Select1st<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<double, std::allocator<double> > > >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<double, std::allocator<double> > > > >::_M_get_insert_unique_pos(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [53]
+-----------------------------------------------
+                0.00    0.00       2/2           main [1]
+[54]     0.0    0.00    0.00       2         std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > std::operator+<char, std::char_traits<char>, std::allocator<char> >(char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&&) [54]
+-----------------------------------------------
+                0.00    0.00       1/1           main [1]
+[55]     0.0    0.00    0.00       1         std::basic_ostream<char, std::char_traits<char> >& std::filesystem::__cxx11::operator<< <char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, std::filesystem::__cxx11::path const&) [55]
+-----------------------------------------------
+                0.00    0.00       1/1           main [1]
+[56]     0.0    0.00    0.00       1         std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::vector(std::initializer_list<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > const&) [56]
+-----------------------------------------------
+                0.00    0.00       1/1           main [1]
+[57]     0.0    0.00    0.00       1         std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::~vector() [57]
+-----------------------------------------------
+                0.00    0.00       1/1           std::vector<std::vector<unsigned long, std::allocator<unsigned long> >, std::allocator<std::vector<unsigned long, std::allocator<unsigned long> > > >::_M_fill_assign(unsigned long, std::vector<unsigned long, std::allocator<unsigned long> > const&) [51]
+[58]     0.0    0.00    0.00       1         std::vector<unsigned long, std::allocator<unsigned long> >* std::__do_uninit_fill_n<std::vector<unsigned long, std::allocator<unsigned long> >*, unsigned long, std::vector<unsigned long, std::allocator<unsigned long> > >(std::vector<unsigned long, std::allocator<unsigned long> >*, unsigned long, std::vector<unsigned long, std::allocator<unsigned long> > const&) [58]
+-----------------------------------------------
+
+ This table describes the call tree of the program, and was sorted by
+ the total amount of time spent in each function and its children.
+
+ Each entry in this table consists of several lines.  The line with the
+ index number at the left hand margin lists the current function.
+ The lines above it list the functions that called this function,
+ and the lines below it list the functions this one called.
+ This line lists:
+     index	A unique number given to each element of the table.
+		Index numbers are sorted numerically.
+		The index number is printed next to every function name so
+		it is easier to look up where the function is in the table.
+
+     % time	This is the percentage of the `total' time that was spent
+		in this function and its children.  Note that due to
+		different viewpoints, functions excluded by options, etc,
+		these numbers will NOT add up to 100%.
+
+     self	This is the total amount of time spent in this function.
+
+     children	This is the total amount of time propagated into this
+		function by its children.
+
+     called	This is the number of times the function was called.
+		If the function called itself recursively, the number
+		only includes non-recursive calls, and is followed by
+		a `+' and the number of recursive calls.
+
+     name	The name of the current function.  The index number is
+		printed after it.  If the function is a member of a
+		cycle, the cycle number is printed between the
+		function's name and the index number.
+
+
+ For the function's parents, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the function into this parent.
+
+     children	This is the amount of time that was propagated from
+		the function's children into this parent.
+
+     called	This is the number of times this parent called the
+		function `/' the total number of times the function
+		was called.  Recursive calls to the function are not
+		included in the number after the `/'.
+
+     name	This is the name of the parent.  The parent's index
+		number is printed after it.  If the parent is a
+		member of a cycle, the cycle number is printed between
+		the name and the index number.
+
+ If the parents of the function cannot be determined, the word
+ `<spontaneous>' is printed in the `name' field, and all the other
+ fields are blank.
+
+ For the function's children, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the child into the function.
+
+     children	This is the amount of time that was propagated from the
+		child's children to the function.
+
+     called	This is the number of times the function called
+		this child `/' the total number of times the child
+		was called.  Recursive calls by the child are not
+		listed in the number after the `/'.
+
+     name	This is the name of the child.  The child's index
+		number is printed after it.  If the child is a
+		member of a cycle, the cycle number is printed
+		between the name and the index number.
+
+ If there are any cycles (circles) in the call graph, there is an
+ entry for the cycle-as-a-whole.  This entry shows who called the
+ cycle (as parents) and the members of the cycle (as children.)
+ The `+' recursive calls entry shows the number of function calls that
+ were internal to the cycle, and the calls entry for each member shows,
+ for that member, how many times it was called from other members of
+ the cycle.
+
+Copyright (C) 2012-2023 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+Index by function name
+
+  [10] TabuSearch(KPFSProblem const&, int, int) [34] KPFSProblem::maxViolations() const [44] void std::vector<double, std::allocator<double> >::_M_realloc_insert<double const&>(__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double const&)
+   [4] BestImprovement(KPFSolution const&) [25] KPFSProblem::items() const [29] void std::vector<int, std::allocator<int> >::_M_realloc_insert<int const&>(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int const&)
+  [17] PerturbSolution(KPFSolution const&, int) [30] KPFSProblem::capacity() const [38] void std::vector<unsigned long, std::allocator<unsigned long> >::_M_realloc_insert<unsigned long const&>(__gnu_cxx::__normal_iterator<unsigned long*, std::vector<unsigned long, std::allocator<unsigned long> > >, unsigned long const&)
+  [11] loadKPFSInstance(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [31] KPFSolution::totalWeight() const [48] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string<std::allocator<char> >(char const*, std::allocator<char> const&)
+   [5] Simulated_Annealing(KPFSProblem, int, float, float, float) [15] KPFSolution::objectiveValue() const [52] std::__cxx11::to_string(int)
+   [6] Get_Random_Neighbour(KPFSolution const&, std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&) [35] KPFSolution::totalViolationCount() const [53] std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<double, std::allocator<double> > >, std::_Select1st<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<double, std::allocator<double> > > >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<double, std::allocator<double> > > > >::_M_get_insert_unique_pos(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+   [3] ConstructiveAlgorithm(KPFSProblem const&, float) [28] KPFSolution::x() const [46] std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<double, std::allocator<double> > >, std::_Select1st<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<double, std::allocator<double> > > >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<double, std::allocator<double> > > > >::_M_get_insert_hint_unique_pos(std::_Rb_tree_const_iterator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::vector<double, std::allocator<double> > > >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+  [13] ILS(KPFSProblem const&, int, int, float, int) [8] KPFSolution::clone() const [37] std::_Rb_tree<unsigned long, unsigned long, std::_Identity<unsigned long>, std::less<unsigned long>, std::allocator<unsigned long> >::_M_get_insert_unique_pos(unsigned long const&)
+   [7] GRASP(KPFSProblem const&, int, int, int, float) [55] std::basic_ostream<char, std::char_traits<char> >& std::filesystem::__cxx11::operator<< <char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, std::filesystem::__cxx11::path const&) [36] std::_Rb_tree<unsigned long, unsigned long, std::_Identity<unsigned long>, std::less<unsigned long>, std::allocator<unsigned long> >::_M_get_insert_hint_unique_pos(std::_Rb_tree_const_iterator<unsigned long>, unsigned long const&)
+  [39] PenaltySet::PenaltySet(std::vector<unsigned long, std::allocator<unsigned long> > const&, unsigned long, double) [40] std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::_M_gen_rand() [47] PenaltySet* std::__do_uninit_copy<__gnu_cxx::__normal_iterator<PenaltySet const*, std::vector<PenaltySet, std::allocator<PenaltySet> > >, PenaltySet*>(__gnu_cxx::__normal_iterator<PenaltySet const*, std::vector<PenaltySet, std::allocator<PenaltySet> > >, __gnu_cxx::__normal_iterator<PenaltySet const*, std::vector<PenaltySet, std::allocator<PenaltySet> > >, PenaltySet*)
+  [50] KPFSProblem::buildItemIndex() [27] std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::operator()() [49] std::vector<unsigned long, std::allocator<unsigned long> >* std::__do_uninit_copy<__gnu_cxx::__normal_iterator<std::vector<unsigned long, std::allocator<unsigned long> > const*, std::vector<std::vector<unsigned long, std::allocator<unsigned long> >, std::allocator<std::vector<unsigned long, std::allocator<unsigned long> > > > >, std::vector<unsigned long, std::allocator<unsigned long> >*>(__gnu_cxx::__normal_iterator<std::vector<unsigned long, std::allocator<unsigned long> > const*, std::vector<std::vector<unsigned long, std::allocator<unsigned long> >, std::allocator<std::vector<unsigned long, std::allocator<unsigned long> > > > >, __gnu_cxx::__normal_iterator<std::vector<unsigned long, std::allocator<unsigned long> > const*, std::vector<std::vector<unsigned long, std::allocator<unsigned long> >, std::allocator<std::vector<unsigned long, std::allocator<unsigned long> > > > >, std::vector<unsigned long, std::allocator<unsigned long> >*)
+  [33] KPFSProblem::KPFSProblem(std::vector<Item, std::allocator<Item> > const&, std::vector<PenaltySet, std::allocator<PenaltySet> > const&, double, unsigned long) [43] void std::vector<PenaltySet, std::allocator<PenaltySet> >::_M_realloc_insert<std::vector<unsigned long, std::allocator<unsigned long> >&, int&, double>(__gnu_cxx::__normal_iterator<PenaltySet*, std::vector<PenaltySet, std::allocator<PenaltySet> > >, std::vector<unsigned long, std::allocator<unsigned long> >&, int&, double&&) [58] std::vector<unsigned long, std::allocator<unsigned long> >* std::__do_uninit_fill_n<std::vector<unsigned long, std::allocator<unsigned long> >*, unsigned long, std::vector<unsigned long, std::allocator<unsigned long> > >(std::vector<unsigned long, std::allocator<unsigned long> >*, unsigned long, std::vector<unsigned long, std::allocator<unsigned long> > const&)
+  [26] KPFSolution::toggleItem(unsigned long) [16] void std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::_M_realloc_insert<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>(__gnu_cxx::__normal_iterator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [42] void std::shuffle<__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&>(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&)
+   [2] KPFSolution::recalculateAll() [56] std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::vector(std::initializer_list<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > const&) [54] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > std::operator+<char, std::char_traits<char>, std::allocator<char> >(char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&&)
+   [9] KPFSolution::KPFSolution(KPFSProblem const&) [57] std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::~vector() [14] _init
+  [41] Item::Item(unsigned long, double, double) [51] std::vector<std::vector<unsigned long, std::allocator<unsigned long> >, std::allocator<std::vector<unsigned long, std::allocator<unsigned long> > > >::_M_fill_assign(unsigned long, std::vector<unsigned long, std::allocator<unsigned long> > const&) [18] <cycle 1>
+  [45] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > __gnu_cxx::__to_xstring<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, char>(int (*)(char*, unsigned long, char const*, __va_list_tag*), unsigned long, char const*, ...) [32] std::vector<main::Algo, std::allocator<main::Algo> >::~vector() [12] <cycle 2>
