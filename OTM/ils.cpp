@@ -52,7 +52,7 @@ KPFSolution ILS(const KPFSProblem& problem, int max_iterations, int perturbation
 
     random_device rd;
     mt19937 gen(rd()); 
-    KPFSolution initial = ConstructiveAlgorithm(problem, alpha, gen);
+    KPFSolution initial = ConstructiveAlgorithm(problem, 1, gen);
     auto current_ptr = make_unique<KPFSolution>(BestImprovement(initial));
     float current_value = current_ptr->objectiveValue();
     int iterations_no_improvement = 0;

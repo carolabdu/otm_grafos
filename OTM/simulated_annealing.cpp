@@ -28,7 +28,7 @@ KPFSolution Simulated_Annealing(KPFSProblem problem, int ASmax, float T_min, flo
     random_device rd;
     mt19937 gen(rd());
     uniform_real_distribution<float> uni01(0.0f, 1.0f);
-    KPFSolution constructed = ConstructiveAlgorithm(problem, 0.7, gen);
+    KPFSolution constructed = ConstructiveAlgorithm(problem, 1, gen);
 
     auto s_star_ptr    = make_unique<KPFSolution>(constructed.clone());
     auto s_current_ptr = make_unique<KPFSolution>(constructed.clone());
