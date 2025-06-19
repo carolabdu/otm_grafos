@@ -102,7 +102,7 @@ int main() {
                                     auto best = GRASP(problem, 100, 15, 0.7);
                                     objective = best.objectiveValue();
                                 } else if (algo.name == "ILS") {
-                                    auto best = ILS(problem, 100, 2, 0.7, 15);
+                                    auto best = ILS(problem, 100, 2, 1, 15);
                                     objective = best.objectiveValue();
                                 }else if (algo.name == "SA") {
                                     auto best = Simulated_Annealing(problem, 100, 1e-3f, 100.0f, 0.95, 15);
