@@ -4,6 +4,8 @@
 #include <vector>
 #include <set>
 #include <cstddef>
+#include <bitset>
+static constexpr std::size_t MAX_ITEMS = 1000;
 
 struct Item {
     std::size_t index;
@@ -13,7 +15,7 @@ struct Item {
 };
 
 struct PenaltySet {
-    std::set<std::size_t> indices;
+    std::bitset<MAX_ITEMS> mask;
     std::size_t allowance;
     double penalty;
     PenaltySet(const std::vector<std::size_t>& idxs,
@@ -28,6 +30,7 @@ public:
                 double capacity,
                 std::size_t maxViolations);
 
+    
     const std::vector<Item>& items() const;
     const std::vector<PenaltySet>& penaltySets() const;
     double capacity() const;
@@ -41,6 +44,7 @@ private:
     std::size_t max_violations_;
     std::vector<std::vector<std::size_t>> item_to_sets_;
     void buildItemIndex();
+    void buildPenaltyMasks();
 };
 
 class KPFSolution {
@@ -57,9 +61,12 @@ public:
 
     // objective
     double objectiveValue() const;
+    double evaluateAddItem(std::size_t idx) const;
+
 
     // getters
-    const std::vector<int>& x() const;
+    const KPFSProblem& problem() const;
+    const std::bitset<MAX_ITEMS>& x() const;
     double totalProfit() const;
     double totalWeight() const;
     const std::vector<std::size_t>& penaltyViolations() const;
@@ -68,17 +75,15 @@ public:
 
 private:
     const KPFSProblem& problem_;
-    std::vector<int> x_;
+    std::bitset<MAX_ITEMS> x_; 
     double total_profit_;
     double total_weight_;
     std::vector<std::size_t> penalty_violations_;
     double total_penalty_;
     std::size_t total_violation_count_;
 
-    // helper: raw counts per penalty-set
     std::vector<std::size_t> penalty_counts_;
 
-    // full recompute
     void recalculateAll();
 };
-#endif // CLASSES_BASE_HPP
+#endif

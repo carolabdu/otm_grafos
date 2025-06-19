@@ -27,7 +27,7 @@ using Clock = std::chrono::high_resolution_clock;
 int main() {
     // Configuration
     const std::string BASE_INSTANCE_PATH = "instances";
-    const int N_RUNS = 5;
+    const int N_RUNS = 15;
     const int INITIAL_SOLUTION_POOL_SIZE = 5;
     const std::string CSV_OUTPUT_FILE = "optimization_benchmark_full_results.csv";
 
@@ -56,6 +56,8 @@ int main() {
         std::string scenario = "scenario" + std::to_string(s);
         std::vector<std::string> corr_types = {
             "correlated_sc" + std::to_string(s),
+            "fully_correlated_sc" + std::to_string(s),
+            "not_correlated_sc" + std::to_string(s)
         };
         for (auto& corr : corr_types) {
             for (auto& size : {"300","500","700","800","1000"}) {
@@ -64,10 +66,10 @@ int main() {
                     fs::path filepath = fs::path(BASE_INSTANCE_PATH) / scenario / corr / size / filename;
 
                     if (!fs::exists(filepath)) {
-                        std::cout << "SKIPPING (not found): " << filepath << std::endl;
+                        //std::cout << "SKIPPING (not found): " << filepath << std::endl;
                         continue;
                     }
-                    std::cout << "\n--- Processing Instance: " << filepath << " ---" << std::endl;
+                    //std::cout << "\n--- Processing Instance: " << filepath << " ---" << std::endl;
                     ++total_processed;
 
                     KPFSProblem problem({},{},0,0);
@@ -87,7 +89,7 @@ int main() {
                     std::map<std::string, std::vector<double>> times;
 
                     for (int run = 1; run <= N_RUNS; ++run) {
-                        std::cout << "  Run " << run << "/" << N_RUNS << " for " << filename << std::endl;
+                        //std::cout << "  Run " << run << "/" << N_RUNS << " for " << filename << std::endl;
                         for (auto& algo : algos) {
                             double objective = std::numeric_limits<double>::quiet_NaN();
                             double elapsed = 0.0;
@@ -97,24 +99,24 @@ int main() {
                                 auto t0 = Clock::now();
                                 if (algo.name == "GRASP") {
                                     // example parameters
-                                    auto best = GRASP(problem, 5, 100);
+                                    auto best = GRASP(problem, 100, 15, 0.7);
                                     objective = best.objectiveValue();
                                 } else if (algo.name == "ILS") {
-                                    auto best = ILS(problem, 100, 2, 0.8, 10);
+                                    auto best = ILS(problem, 100, 2, 0.7, 15);
                                     objective = best.objectiveValue();
-                                } else if (algo.name == "SA") {
-                                    auto best = Simulated_Annealing(problem, 100, 1e-3f, 100.0f, 0.8);
+                                }else if (algo.name == "SA") {
+                                    auto best = Simulated_Annealing(problem, 100, 1e-3f, 100.0f, 0.95, 15);
                                     objective = best.objectiveValue();
                                 } else if (algo.name == "TabuSearch") {
-                                    auto best = TabuSearch(problem, 100, 10);
+                                    auto best = TabuSearch(problem, 100, 15, 15);
                                     objective = best.objectiveValue();
                                 }
                                 auto t1 = Clock::now();
                                 elapsed = std::chrono::duration<double>(t1 - t0).count();
 
-                                std::cout << "    " << algo.name
+                                /*std::cout << "    " << algo.name
                                           << " - Obj: " << objective
-                                          << ", Time: " << elapsed << "s" << std::endl;
+                                          << ", Time: " << elapsed << "s" << std::endl;*/
                             } catch (const std::exception& e) {
                                 error = e.what();
                                 std::cerr << "    ERROR " << algo.name << ": " << error << std::endl;
@@ -138,7 +140,7 @@ int main() {
                     }
 
                     // Print means per instance
-                    std::cout << "\n  --- Mean Results for " << filename << " ---" << std::endl;
+                    /*std::cout << "\n  --- Mean Results for " << filename << " ---" << std::endl;
                     for (auto& algo : algos) {
                         auto& ov = obj_vals[algo.name];
                         auto& tm = times[algo.name];
@@ -149,7 +151,7 @@ int main() {
                         std::cout << "    " << algo.name
                                   << " Mean Obj: " << mean_obj
                                   << ", Mean Time: " << mean_time << "s" << std::endl;
-                    }
+                    }*/
                 }
             }
         }

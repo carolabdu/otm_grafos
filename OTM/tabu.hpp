@@ -6,6 +6,7 @@
 
 KPFSolution TabuSearch(const KPFSProblem& problem,
                        int max_iter = 100,
-                       int max_tabu_size = 10);
+                       int max_tabu_size = 10,
+                    int relaxation = 15);
 
 #endif

@@ -6,45 +6,45 @@
 #include <algorithm>
 
 KPFSolution PerturbSolution(const KPFSolution& solution, int strength) {
-    // Clone via pointer to avoid deleted assignment
+    // Clone solution
     auto perturbed_ptr = std::make_unique<KPFSolution>(solution.clone());
-    int n = static_cast<int>(perturbed_ptr->x().size());
+    const auto& bitset_x = perturbed_ptr->x();
+    int n = MAX_ITEMS; // Using MAX_ITEMS because bitset is always this size
 
-    // Conta quantos itens estão selecionados
-    int selected_count = 0;
-    for (int v : perturbed_ptr->x()) selected_count += v;
-
-    // Inicializa gerador aleatório
-    random_device rd;
-    mt19937 gen(rd());
-
-    // Decide aleatoriamente quantos remover (máximo strength e selected_count)
-    std::uniform_int_distribution<int> remove_dist(0, std::min(strength, selected_count));
-    int num_remove = remove_dist(gen);
-    int num_add = strength - num_remove;
-
-    // Separa índices selecionados e não selecionados
+    // List of indices
     std::vector<int> selected_indices;
     std::vector<int> not_selected_indices;
+
+    // Collect indices based on bitset state
     for (int i = 0; i < n; ++i) {
-        if (perturbed_ptr->x()[i] == 1) selected_indices.push_back(i);
+        if (i >= (int)perturbed_ptr->problem().items().size()) break; // skip unused bits
+        if (bitset_x.test(i)) selected_indices.push_back(i);
         else not_selected_indices.push_back(i);
     }
+
+    // Random engine
+    std::random_device rd;
+    std::mt19937 gen(rd());
+
+    // How many to remove (cannot exceed what's selected)
+    std::uniform_int_distribution<int> remove_dist(0, std::min(strength, (int)selected_indices.size()));
+    int num_remove = remove_dist(gen);
+    int num_add = strength - num_remove;
 
     std::shuffle(selected_indices.begin(), selected_indices.end(), gen);
     std::shuffle(not_selected_indices.begin(), not_selected_indices.end(), gen);
 
-    // Remove itens
+    // Remove items
     for (int i = 0; i < num_remove && i < (int)selected_indices.size(); ++i) {
-        perturbed_ptr->toggleItem(selected_indices[i]);
+        perturbed_ptr->removeItem(selected_indices[i]);
     }
 
-    // Adiciona itens
+    // Add items
     for (int i = 0; i < num_add && i < (int)not_selected_indices.size(); ++i) {
-        perturbed_ptr->toggleItem(not_selected_indices[i]);
+        perturbed_ptr->addItem(not_selected_indices[i]);
     }
 
-    return *perturbed_ptr; // retorna unique_ptr
+    return *perturbed_ptr;
 }
 
 
@@ -52,7 +52,7 @@ KPFSolution ILS(const KPFSProblem& problem, int max_iterations, int perturbation
 
     random_device rd;
     mt19937 gen(rd()); 
-    KPFSolution initial = ConstructiveAlgorithm(problem, alpha);
+    KPFSolution initial = ConstructiveAlgorithm(problem, alpha, gen);
     auto current_ptr = make_unique<KPFSolution>(BestImprovement(initial));
     float current_value = current_ptr->objectiveValue();
     int iterations_no_improvement = 0;
@@ -66,6 +66,7 @@ KPFSolution ILS(const KPFSProblem& problem, int max_iterations, int perturbation
         if (improved.objectiveValue() > best_value) {
             best_ptr = make_unique<KPFSolution>(move(improved));
             best_value = improved.objectiveValue();
+            iterations_no_improvement = 0;
         }
         else{
             iterations_no_improvement +=1;
