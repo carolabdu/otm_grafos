@@ -17,7 +17,7 @@ KPFSolution PerturbSolution(const KPFSolution& solution, int strength) {
 
     // Collect indices based on bitset state
     for (int i = 0; i < n; ++i) {
-        if (i >= (int)perturbed_ptr->problem().items().size()) break; // skip unused bits
+        if (i >= (int)perturbed_ptr->problem().items().size()) break;
         if (bitset_x.test(i)) selected_indices.push_back(i);
         else not_selected_indices.push_back(i);
     }
