@@ -1,9 +1,10 @@
 #include "file_io.hpp"
-#include "grasp.hpp"      // GRASP, ParallelGRASP
-#include "ils.hpp"        // ILS
-#include "simulated_annealing.hpp" // SimulatedAnnealing
-#include "tabu.hpp"       // TabuSearch
-#include "utils.hpp"      // RandomSolutions, ConstructiveAlgorithm
+#include "grasp.hpp"
+#include "react_grasp.hpp"
+#include "ils.hpp"
+#include "simulated_annealing.hpp" 
+#include "tabu.hpp"      
+#include "utils.hpp"     
 #include "classes_base.hpp"
 #include <filesystem>
 #include <iostream>
@@ -27,9 +28,9 @@ using Clock = std::chrono::high_resolution_clock;
 int main() {
     // Configuration
     const std::string BASE_INSTANCE_PATH = "instances";
-    const int N_RUNS = 15;
+    const int N_RUNS = 10;
     const int INITIAL_SOLUTION_POOL_SIZE = 5;
-    const std::string CSV_OUTPUT_FILE = "optimization_benchmark_full_results.csv";
+    const std::string CSV_OUTPUT_FILE = "ils_strength.csv";
 
     // Prepare CSV output (write header immediately)
     std::ofstream csv(CSV_OUTPUT_FILE);
@@ -44,10 +45,15 @@ int main() {
     // Define algorithms
     struct Algo { std::string name; bool is_grasp; };
     std::vector<Algo> algos = {
-        {"GRASP", true},
-        {"ILS", false},
-        {"SA", false},
-        {"TabuSearch", false}
+        //{"GRASP", false},
+        {"ILS-2", true},
+        {"ILS-10", false},
+        {"ILS-50", false},
+        {"ILS-100", false},
+        {"ILS-300", false}
+        /*{"SA", false},
+        {"TabuSearch", false},
+        {"REACT_GRASP",false}*/
     };
 
     int total_processed = 0;
@@ -101,14 +107,30 @@ int main() {
                                     // example parameters
                                     auto best = GRASP(problem, 100, 15, 0.7);
                                     objective = best.objectiveValue();
-                                } else if (algo.name == "ILS") {
+                                } else if (algo.name == "ILS-2") {
                                     auto best = ILS(problem, 100, 2, 1, 15);
                                     objective = best.objectiveValue();
-                                }else if (algo.name == "SA") {
+                                } else if (algo.name == "ILS-10"){
+                                    auto best = ILS(problem, 100, 10, 1, 15);
+                                    objective = best.objectiveValue();
+                                } else if (algo.name == "ILS-50"){
+                                    auto best = ILS(problem, 100, 50, 1, 15);
+                                    objective = best.objectiveValue();
+                                } else if (algo.name == "ILS-100"){
+                                    auto best = ILS(problem, 100, 100, 1, 15);
+                                    objective = best.objectiveValue();
+                                } else if (algo.name == "ILS-300"){
+                                    auto best = ILS(problem, 100, 300, 1, 15);
+                                    objective = best.objectiveValue();
+                                } else if (algo.name == "SA") {
                                     auto best = Simulated_Annealing(problem, 100, 1e-3f, 100.0f, 0.95, 15);
                                     objective = best.objectiveValue();
                                 } else if (algo.name == "TabuSearch") {
                                     auto best = TabuSearch(problem, 100, 15, 15);
+                                    objective = best.objectiveValue();
+                                }
+                                else if (algo.name == "REACT_GRASP") {
+                                    auto best = React_GRASP(problem, {0, 0.25, 0.5, 0.75, 1}, 10, 100, 15);
                                     objective = best.objectiveValue();
                                 }
                                 auto t1 = Clock::now();
