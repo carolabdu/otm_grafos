@@ -5,7 +5,7 @@ CXX = g++
 CXXFLAGS = -std=c++17 -O3 -march=native -Ofast -flto
 
 # Source files
-SRCS = classes_base.cpp utils.cpp ils.cpp grasp.cpp simulated_annealing.cpp tabu.cpp file_io.cpp test.cpp
+SRCS = classes_base.cpp utils.cpp ils.cpp grasp.cpp react_grasp.cpp simulated_annealing.cpp tabu.cpp file_io.cpp test.cpp
 
 # Output executable
 TARGET = test_exec
