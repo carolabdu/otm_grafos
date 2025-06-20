@@ -1,0 +1,115 @@
+
+Gurobi 12.0.2 (linux64, C++) logging started Thu Jun 19 08:00:19 2025
+
+Set parameter LogFile to value "log/instances/scenario4/correlated_sc4/300/kpfs_3.txt.log"
+
+Gurobi 12.0.2 (linux64, C++) logging started Thu Jun 19 08:01:42 2025
+
+Set parameter LogFile to value "log/instances/scenario4/correlated_sc4/300/kpfs_3.txt.log"
+
+Gurobi 12.0.2 (linux64, C++) logging started Thu Jun 19 08:02:53 2025
+
+Set parameter LogFile to value "log/instances/scenario4/correlated_sc4/300/kpfs_3.txt.log"
+
+Gurobi 12.0.2 (linux64, C++) logging started Thu Jun 19 08:03:57 2025
+
+Set parameter LogFile to value "log/instances/scenario4/correlated_sc4/300/kpfs_3.txt.log"
+
+Gurobi 12.0.2 (linux64, C++) logging started Thu Jun 19 13:14:53 2025
+
+Set parameter WLSAccessID
+Set parameter WLSSecret
+Set parameter LicenseID to value 2679381
+Set parameter LogFile to value "log/instances/scenario4/correlated_sc4/300/kpfs_3.txt.log"
+Academic license 2679381 - for non-commercial use only - registered to be___@poli.ufrj.br
+Set parameter TimeLimit to value 1800
+Set parameter Threads to value 1
+Gurobi Optimizer version 12.0.2 build v12.0.2rc0 (linux64 - "Ubuntu 24.04.1 LTS")
+
+CPU model: 13th Gen Intel(R) Core(TM) i7-1355U, instruction set [SSE2|AVX|AVX2]
+Thread count: 6 physical cores, 12 logical processors, using up to 1 threads
+
+Non-default parameters:
+TimeLimit  1800
+Threads  1
+
+Academic license 2679381 - for non-commercial use only - registered to be___@poli.ufrj.br
+Optimize a model with 902 rows, 1200 columns and 9782 nonzeros
+Model fingerprint: 0xac0b29ed
+Variable types: 0 continuous, 1200 integer (300 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 3e+01]
+  Objective range  [1e+00, 4e+01]
+  Bounds range     [1e+00, 1e+01]
+  RHS range        [1e+00, 5e+02]
+Found heuristic solution: objective 771.0000000
+Presolve removed 0 rows and 12 columns
+Presolve time: 0.10s
+Presolved: 902 rows, 1188 columns, 9758 nonzeros
+Variable types: 0 continuous, 1188 integer (383 binary)
+
+Root relaxation: objective 9.316325e+02, 511 iterations, 0.08 seconds (0.03 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0  931.63249    0  118  771.00000  931.63249  20.8%     -    0s
+H    0     0                     773.0000000  931.63249  20.5%     -    0s
+H    0     0                     786.0000000  931.63249  18.5%     -    0s
+H    0     0                     794.0000000  931.63249  17.3%     -    0s
+H    0     0                     800.0000000  931.63249  16.5%     -    0s
+H    0     0                     856.0000000  931.63249  8.84%     -    0s
+H    0     0                     874.0000000  931.63249  6.59%     -    0s
+H    0     0                     878.0000000  931.63249  6.11%     -    0s
+H    0     0                     885.0000000  931.63249  5.27%     -    0s
+     0     0  929.26248    0  116  885.00000  929.26248  5.00%     -    0s
+     0     0  928.41022    0  122  885.00000  928.41022  4.91%     -    1s
+     0     0  928.30821    0  126  885.00000  928.30821  4.89%     -    1s
+     0     0  928.30225    0  122  885.00000  928.30225  4.89%     -    1s
+     0     0  928.29720    0  124  885.00000  928.29720  4.89%     -    1s
+     0     0  928.26064    0  125  885.00000  928.26064  4.89%     -    1s
+     0     0  928.25579    0  128  885.00000  928.25579  4.89%     -    1s
+     0     0  928.25419    0  126  885.00000  928.25419  4.89%     -    1s
+     0     0  928.25248    0  126  885.00000  928.25248  4.89%     -    1s
+     0     2  928.16821    0  126  885.00000  928.16821  4.88%     -    2s
+H   26    26                     886.0000000  927.81402  4.72%  63.2    2s
+H   26    26                     888.0000000  927.81402  4.48%  63.2    2s
+H   26    26                     890.0000012  927.81402  4.25%  63.2    2s
+H   64    64                     892.0000000  927.81402  4.02%  45.8    3s
+   281   261  900.37952   43   95  892.00000  927.43067  3.97%  37.8    5s
+   563   494  909.04357   17  129  892.00000  925.31328  3.73%  35.6   10s
+H  647   520                     893.0000000  925.31328  3.62%  39.3   14s
+H  647   493                     895.0000000  925.31328  3.39%  39.3   14s
+   675   504  909.52670   28   85  895.00000  925.31328  3.39%  40.4   15s
+H  899   525                     899.0000000  923.14702  2.69%  44.8   17s
+  1039   566  904.37086   36   74  899.00000  922.52901  2.62%  45.2   20s
+H 1195   582                     900.0000000  921.33896  2.37%  44.0   22s
+  1534   689  909.25358   33   90  900.00000  920.58306  2.29%  42.9   25s
+* 2135   813              33     903.0000000  919.61390  1.84%  40.3   29s
+  2172   829  917.38008   21  112  903.00000  919.48034  1.83%  40.3   30s
+* 2437   644              30     907.0000000  919.08598  1.33%  39.9   33s
+  2579   694  909.51452   28   88  907.00000  918.79659  1.30%  39.7   35s
+  3180   819  911.77447   24   91  907.00000  917.01417  1.10%  39.3   40s
+  3930   946     cutoff   35       907.00000  915.94032  0.99%  38.6   45s
+  4366  1018     cutoff   28       907.00000  915.42443  0.93%  38.2   50s
+  5183  1112  909.57455   30  100  907.00000  914.61448  0.84%  37.6   55s
+  6066  1192  909.14676   28   88  907.00000  913.97267  0.77%  37.1   60s
+  6973  1225  908.14526   27   72  907.00000  913.33975  0.70%  36.4   65s
+  7638  1201  910.94867   24   95  907.00000  912.97070  0.66%  36.1   70s
+  9235  1013  910.59305   23   75  907.00000  911.85350  0.54%  35.5   75s
+* 9801   716              32     908.0000000  911.39116  0.37%  35.2   77s
+
+Cutting planes:
+  Gomory: 8
+  MIR: 6
+  Flow cover: 3
+  Zero half: 11
+  RLT: 1
+
+Explored 10843 nodes (368776 simplex iterations) in 79.33 seconds (24.93 work units)
+Thread count was 1 (of 12 available processors)
+
+Solution count 10: 908 907 903 ... 888
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 9.080000000000e+02, best bound 9.080000000000e+02, gap 0.0000%
