@@ -67,7 +67,7 @@ int main() {
         };
         for (auto& corr : corr_types) {
             for (auto& size : {"300","500","700","800","1000"}) {
-                for (int inst = 1; inst <= 1; ++inst) {
+                for (int inst = 1; inst <= 10; ++inst) {
                     std::string filename = "kpfs_" + std::to_string(inst) + ".txt";
                     fs::path filepath = fs::path(BASE_INSTANCE_PATH) / scenario / corr / size / filename;
 
