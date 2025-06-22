@@ -71,7 +71,7 @@ void solveInstance(const string& filename, ResultData& result) {
     result.instanceName = filename; // Salva o nome da instância
 
     try {
-        int n, l, b, k = 30;
+        int n, l, b, k;
         vector<int> p, w, h, d;
         vector<vector<int>> C;
 
@@ -83,6 +83,28 @@ void solveInstance(const string& filename, ResultData& result) {
         fs::path log_file_path = "log";
         log_file_path /= filename; // Anexa o caminho completo (ex: "log/instances/scenario1/...")
         log_file_path += ".log";   // Adiciona a extensão .log no final
+
+        if (log_file_path.find("scenario1") != std::string::npos || log_file_path.find("scenario2") != std::string::npos){
+        switch (n){
+            case (300):
+                k = n/15;
+                break;
+            case (500):
+                k = n/25;
+                break;
+            case (700):
+                k = n/35;
+                break;
+            case (800):
+                k = std::round(n/45);
+                break;
+            case (1000):
+                k = std::round(n/55);
+                break;
+        }
+    } else {
+        k = std::round(nI/15);
+    }
 
         // Garante que a estrutura de diretórios de destino exista
         // ex: cria "log/instances/scenario1/correlated_sc1/300/"

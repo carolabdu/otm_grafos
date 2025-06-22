@@ -28,9 +28,9 @@ using Clock = std::chrono::high_resolution_clock;
 int main() {
     // Configuration
     const std::string BASE_INSTANCE_PATH = "instances";
-    const int N_RUNS = 10;
+    const int N_RUNS = 20;
     const int INITIAL_SOLUTION_POOL_SIZE = 5;
-    const std::string CSV_OUTPUT_FILE = "ils_strength.csv";
+    const std::string CSV_OUTPUT_FILE = "final.csv";
 
     // Prepare CSV output (write header immediately)
     std::ofstream csv(CSV_OUTPUT_FILE);
@@ -45,15 +45,15 @@ int main() {
     // Define algorithms
     struct Algo { std::string name; bool is_grasp; };
     std::vector<Algo> algos = {
-        //{"GRASP", false},
-        {"ILS-2", true},
+        {"GRASP", true},
+        {"ILS-2", false},
         {"ILS-10", false},
         {"ILS-50", false},
         {"ILS-100", false},
-        {"ILS-300", false}
-        /*{"SA", false},
+        {"ILS-300", false},
+        {"SA", false},
         {"TabuSearch", false},
-        {"REACT_GRASP",false}*/
+        {"REACT_GRASP",false}
     };
 
     int total_processed = 0;
@@ -67,7 +67,7 @@ int main() {
         };
         for (auto& corr : corr_types) {
             for (auto& size : {"300","500","700","800","1000"}) {
-                for (int inst = 1; inst <= 10; ++inst) {
+                for (int inst = 1; inst <= 1; ++inst) {
                     std::string filename = "kpfs_" + std::to_string(inst) + ".txt";
                     fs::path filepath = fs::path(BASE_INSTANCE_PATH) / scenario / corr / size / filename;
 
@@ -108,19 +108,19 @@ int main() {
                                     auto best = GRASP(problem, 100, 15, 0.7);
                                     objective = best.objectiveValue();
                                 } else if (algo.name == "ILS-2") {
-                                    auto best = ILS(problem, 100, 2, 1, 15);
+                                    auto best = ILS(problem, 100, 2, 0.75, 15);
                                     objective = best.objectiveValue();
                                 } else if (algo.name == "ILS-10"){
-                                    auto best = ILS(problem, 100, 10, 1, 15);
+                                    auto best = ILS(problem, 100, 10, 0.75, 15);
                                     objective = best.objectiveValue();
                                 } else if (algo.name == "ILS-50"){
-                                    auto best = ILS(problem, 100, 50, 1, 15);
+                                    auto best = ILS(problem, 100, 50, 0.75, 15);
                                     objective = best.objectiveValue();
                                 } else if (algo.name == "ILS-100"){
-                                    auto best = ILS(problem, 100, 100, 1, 15);
+                                    auto best = ILS(problem, 100, 100, 0.75, 15);
                                     objective = best.objectiveValue();
                                 } else if (algo.name == "ILS-300"){
-                                    auto best = ILS(problem, 100, 300, 1, 15);
+                                    auto best = ILS(problem, 100, 300, 0.75, 15);
                                     objective = best.objectiveValue();
                                 } else if (algo.name == "SA") {
                                     auto best = Simulated_Annealing(problem, 100, 1e-3f, 100.0f, 0.95, 15);

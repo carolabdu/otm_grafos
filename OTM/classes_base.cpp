@@ -11,7 +11,7 @@ PenaltySet::PenaltySet(const std::vector<std::size_t>& idxs,
                        double pen)
     : mask(), allowance(allow), penalty(pen) { for (auto i : idxs) if (i < MAX_ITEMS) mask.set(i); }
 
-// KPFSProblem ctor & build index
+// KPFSProblem construtor & build index
 KPFSProblem::KPFSProblem(const std::vector<Item>& items,
                          const std::vector<PenaltySet>& penaltySets,
                          double capacity,

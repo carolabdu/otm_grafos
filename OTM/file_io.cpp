@@ -3,6 +3,7 @@
 #include <iostream>
 #include <fstream>
 #include <stdexcept>
+#include <cmath>
 
 KPFSProblem loadKPFSInstance(const std::string& file_path) {
     std::ifstream file(file_path);
@@ -77,7 +78,31 @@ KPFSProblem loadKPFSInstance(const std::string& file_path) {
         penalty_sets.emplace_back(indices, allowance, static_cast<double>(penalty));
     }
 
+    int k;
     // Create problem
-    KPFSProblem problem(items, penalty_sets, static_cast<double>(kS), /*max_violations=*/nS);
+    if (file_path.find("scenario1") != std::string::npos || file_path.find("scenario2") != std::string::npos){
+        switch (nI){
+            case (300):
+                k = nI/15;
+                break;
+            case (500):
+                k = nI/25;
+                break;
+            case (700):
+                k = nI/35;
+                break;
+            case (800):
+                k = std::round(nI/45);
+                break;
+            case (1000):
+                k = std::round(nI/55);
+                break;
+        }
+    }
+    else{
+        k = std::round(nI/15);
+    }
+
+    KPFSProblem problem(items, penalty_sets, static_cast<double>(kS), k);
     return problem;
 }
